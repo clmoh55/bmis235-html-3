@@ -1,113 +1,105 @@
 <!DOCTYPE html>
 <!--
-  Author: Christian Mohlenhoff
-  GU username: cmohlenhoff
-  Course: BMIS 235 - HTML-3
+   Author: Christian Mohlenhoff
+   GU username: cmohlenhoff
+   Course: BMIS 235 - HTML-3
 -->
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="author" content="Christian Mohlenhoff">
-  <title>Schweitzer Mountain Resort - 80s PNW Shred</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8">
+    <meta name="author" content="Christian Mohlenhoff">
+    <title>Schweitzer Mountain Resort - 80s PNW Shred</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <nav>
-  <a href="index.html"><img src="img/home.png" alt="Home"></a>
-  <a href="schweitzer.html"><img src="img/schweitzer.png" alt="Schweitzer"></a>
-  <a href="spokane.html"><img src="img/mtspokane.png" alt="Mt. Spokane"></a>
-  <a href="fortynine.html"><img src="img/49degrees.png" alt="49 Degrees"></a>
+  <a href="index.html"><img src="img/home.png" alt="Base Lodge"></a>
+  <a href="schweitzer.html"><img src="img/schweitzer.png" alt="Schweitzer Bowls"></a>
+  <a href="spokane.html"><img src="img/mtspokane.png" alt="Spokane Nights"></a>
+  <a href="fortynine.html"><img src="img/49degrees.png" alt="49 North Glades"></a>
 </nav>
 
 <h1>Schweitzer Mountain Resort</h1>
 
-<div class="retro-card">
-  <h2>The King of the Selkirks</h2>
-  <p>Located near Sandpoint, Idaho, Schweitzer boasts 2,900 acres of terrain overlooking Lake Pend Oreille. With 92 trails, 10 lifts, and deep Outback powder stashes, it is an absolute PNW winter paradise!</p>
-</div>
-
-<!-- Animated SVG/CSS retro 80s ski-jump loop graphic -->
-<div class="retro-card" style="text-align: center;">
-  <h2>⚡ RETRO 80s SKI-JUMP GRAPHIC ⚡</h2>
-  <svg width="320" height="120" viewBox="0 0 320 120" style="background:#0b192c; border:2px solid #00f5d4; border-radius:10px; box-shadow:0 0 12px #00f5d4;">
-    <defs>
-      <linearGradient id="neonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stop-color="#00f5d4" />
-        <stop offset="100%" stop-color="#ff2a85" />
-      </linearGradient>
-    </defs>
-    <!-- Ramp -->
-    <path d="M 20 100 Q 100 100 150 70 L 170 50" fill="none" stroke="#fee440" stroke-width="4" />
-    <!-- Mountain line -->
-    <path d="M 0 110 L 120 110 L 200 40 L 320 110" fill="none" stroke="#102a26" stroke-width="3" />
-    <!-- Animated Skier Graphic -->
-    <g>
-      <circle cx="190" cy="35" r="6" fill="#00f5d4">
-        <animate attributeName="cy" values="45;20;45" dur="1.5s" repeatCount="indefinite" />
-        <animate attributeName="cx" values="170;240;170" dur="1.5s" repeatCount="indefinite" />
-      </circle>
-      <line x1="180" y1="45" x2="200" y2="25" stroke="#ff2a85" stroke-width="4">
-        <animate attributeName="x1" values="160;230;160" dur="1.5s" repeatCount="indefinite" />
-        <animate attributeName="x2" values="180;250;180" dur="1.5s" repeatCount="indefinite" />
-        <animate attributeName="y1" values="55;30;55" dur="1.5s" repeatCount="indefinite" />
-        <animate attributeName="y2" values="35;10;35" dur="1.5s" repeatCount="indefinite" />
-      </line>
-    </g>
-    <text x="160" y="110" fill="#00f5d4" font-family="sans-serif" font-weight="bold" font-size="12" text-anchor="middle">OUTBACK POWDER JUMP LOOP</text>
-  </svg>
-</div>
-
-<div class="retro-card">
-  <h2>Mountain & Action Visuals</h2>
-  <div class="media-grid">
+<div class="resort-detail">
+  <div class="mountain-grid">
     <div>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/8/86/Schweitzer_Mountain_Village.JPG" alt="Schweitzer Mountain Village" class="mountain-img">
-      <p><b>Schweitzer Village & Lake Pend Oreille:</b> Breathtaking alpine views.</p>
+      <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 500' width='100%' height='100%'><defs><linearGradient id='sky' x1='0' y1='0' x2='0' y2='1'><stop offset='0%' stop-color='%230f172a'/><stop offset='60%' stop-color='%231e3a8a'/><stop offset='100%' stop-color='%2338bdf8'/></linearGradient><linearGradient id='snow' x1='0' y1='0' x2='0' y2='1'><stop offset='0%' stop-color='%23ffffff'/><stop offset='100%' stop-color='%23e2e8f0'/></linearGradient></defs><rect width='800' height='500' fill='url(%23sky)'/><polygon points='0,500 150,220 300,380 450,160 650,420 800,200 800,500' fill='%231e293b'/><polygon points='150,220 200,280 120,280' fill='url(%23snow)'/><polygon points='450,160 510,240 400,240' fill='url(%23snow)'/><polygon points='800,200 800,280 730,280' fill='url(%23snow)'/><polygon points='0,500 0,350 250,500' fill='url(%23snow)'/><polygon points='200,500 500,320 800,500' fill='url(%23snow)'/><g fill='%23064e3b'><polygon points='80,480 95,440 110,480'/><polygon points='140,490 155,430 170,490'/><polygon points='600,470 615,410 630,470'/><polygon points='680,485 695,425 710,485'/></g><text x='400' y='250' font-family='Arial, sans-serif' font-weight='bold' font-size='28' fill='%23ffffff' text-anchor='middle' opacity='0.95'>Selkirk Deep Powder Bowls &amp; Alpine Vistas</text></svg>" alt="Selkirk Deep Powder Bowls &amp; Alpine Vistas" class="mountain-img">
+      <p><b>Selkirk Deep Powder Bowls &amp; Alpine Vistas:</b> Breathtaking alpine views.</p>
     </div>
-    <div>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/e/ea/Freestyle_skiing_jump2.jpg" alt="Freestyle Air in Outback Bowl" class="mountain-img">
-      <p><b>Outback Bowl Air:</b> Launching into deep Idaho powder.</p>
+    <div class="stats-box">
+      <h2>Resort Stats</h2>
+      <ul>
+        <li><b>Vertical Drop:</b> 2,400 ft</li>
+        <li><b>Skiable Acres:</b> 2,900 acres</li>
+        <li><b>Lifts:</b> 10</li>
+        <li><b>Average Snowfall:</b> 300 inches</li>
+      </ul>
     </div>
   </div>
 </div>
 
-<div class="retro-card">
-  <h2>Retro Trail & Stats Breakdown</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Category</th>
-        <th>Stats</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Vertical Drop</td>
-        <td>2,400 ft</td>
-        <td>Top elevation 6,400 ft to base elevation 4,000 ft</td>
-      </tr>
-      <tr>
-        <td>Skiable Terrain</td>
-        <td>2,900 acres</td>
-        <td>92 named trails plus open bowl skiing</td>
-      </tr>
-      <tr>
-        <td>Lifts</td>
-        <td>10 lifts</td>
-        <td>Includes Stella Express 6-person high-speed chair</td>
-      </tr>
-      <tr>
-        <td>Avg Snowfall</td>
-        <td>300 inches</td>
-        <td>Famous PNW powder & inland champagne snow</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+<script>
+(function generateNavButtons() {
+  const buttonConfigs = [
+    { href: 'index.html', label: 'BASE LODGE' },
+    { href: 'schweitzer.html', label: 'SCHWEITZER BOWLS' },
+    { href: 'spokane.html', label: 'SPOKANE NIGHTS' },
+    { href: 'fortynine.html', label: '49° NORTH GLADES' }
+  ];
 
-<footer>Built by Christian Mohlenhoff &middot; BMIS 235</footer>
+  const navImgs = document.querySelectorAll('nav img');
+  navImgs.forEach((img, index) => {
+    const config = buttonConfigs[index];
+    if (!config) return;
+
+    const canvas = document.createElement('canvas');
+    canvas.width = 210;
+    canvas.height = 50;
+    const ctx = canvas.getContext('2d');
+
+    const grad = ctx.createLinearGradient(0, 0, 0, 50);
+    grad.addColorStop(0, '#1f2937');
+    grad.addColorStop(0.5, '#111827');
+    grad.addColorStop(1, '#0f172a');
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, 210, 50);
+
+    ctx.lineWidth = 2;
+    ctx.strokeStyle = '#38bdf8';
+    ctx.beginPath();
+    ctx.moveTo(0, 50); ctx.lineTo(0, 0); ctx.lineTo(210, 0);
+    ctx.stroke();
+
+    ctx.strokeStyle = '#ec4899';
+    ctx.beginPath();
+    ctx.moveTo(210, 0); ctx.lineTo(210, 50); ctx.lineTo(0, 50);
+    ctx.stroke();
+
+    ctx.strokeStyle = '#334155';
+    ctx.strokeRect(3, 3, 204, 44);
+
+    ctx.strokeStyle = 'rgba(56, 189, 248, 0.12)';
+    ctx.lineWidth = 1;
+    for (let x = 15; x < 210; x += 15) {
+      ctx.beginPath(); ctx.moveTo(x, 4); ctx.lineTo(x, 46); ctx.stroke();
+    }
+
+    ctx.fillStyle = '#ffffff';
+    ctx.shadowColor = '#38bdf8';
+    ctx.shadowBlur = 4;
+    ctx.font = '900 13px "Segoe UI", Arial, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(config.label, 105, 25);
+
+    img.src = canvas.toDataURL('image/png');
+    img.width = 210;
+    img.height = 50;
+  });
+})();
+</script>
 
 </body>
 </html>
