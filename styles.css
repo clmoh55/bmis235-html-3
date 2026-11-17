@@ -34,6 +34,8 @@ h1 {
   color: #1b365d;
   text-align: center;
   font-size: 40px;
+  border-bottom: 3px solid #2e6f40;
+  padding-bottom: 8px;
 }
 
 p {
