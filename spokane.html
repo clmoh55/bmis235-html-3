@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <!--
-   Author: Christian Mohlenhoff
-   GU username: cmohlenhoff
-   Course: BMIS 235 - HTML-3
+  Author: Christian Mohlenhoff
+  GU username: cmohlenhoff
+  Course: BMIS 235 - HTML-3
 -->
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="author" content="Christian Mohlenhoff">
-  <title>Mt. Spokane Ski &amp; Snowboard Park</title>
+  <title>Mt. Spokane Ski & Snowboard Park - 80s Neon Night Shred</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -20,22 +20,88 @@
   <a href="fortynine.html"><img src="img/49degrees.png" alt="49 Degrees"></a>
 </nav>
 
-  <h1>Mt. Spokane Ski &amp; Snowboard Park</h1>
-  
-  <p>
-    Mt. Spokane is a non-profit ski area located just 28 miles northeast of downtown Spokane, Washington.
-  </p>
-  <p>
-    Featuring 1,708 acres of skiable terrain, night skiing 5 nights a week, and 6 chairlifts, Mt. Spokane is the local favorite mountain.
-  </p>
-  <p>
-    Check out <a href="https://www.mtspokane.com">Mt. Spokane Official Site</a> for current snow reports.
-  </p>
-  <p>
-    Questions? <a href="mailto:cmohlenhoff@zagmail.gonzaga.edu">Email me</a>
-  </p>
+<h1>Mt. Spokane Ski &amp; Snowboard Park</h1>
 
-  <footer>Built by Christian Mohlenhoff &middot; BMIS 235</footer>
+<div class="retro-card">
+  <h2>Spokane's Local Non-Profit Shred Mountain</h2>
+  <p>Just 28 miles northeast of Spokane, Mt. Spokane Ski &amp; Snowboard Park delivers legendary PNW steeze with 1,704 skiable acres, 52 runs, and a vibrant non-profit community spirit. It's the ultimate home mountain for Gonzaga riders!</p>
+</div>
+
+<!-- Animated SVG/CSS "NIGHT SKIING NEON SHRED" Animation -->
+<div class="retro-card" style="text-align: center;">
+  <h2>⚡ NIGHT SKIING NEON SHRED ANIMATION ⚡</h2>
+  <svg width="320" height="120" viewBox="0 0 320 120" style="background:#0b192c; border:2px solid #ff2a85; border-radius:10px; box-shadow:0 0 15px #ff2a85;">
+    <!-- Neon Searchlight / Floodlight -->
+    <polygon points="160,0 40,120 280,120" fill="rgba(0,245,212,0.15)" />
+    <!-- Halfpipe curve -->
+    <path d="M 30 40 Q 160 120 290 40" fill="none" stroke="#00f5d4" stroke-width="4" />
+    <!-- Animated Snowboarder under night lights -->
+    <g>
+      <circle cx="160" cy="70" r="5" fill="#fee440">
+        <animate attributeName="cx" values="50;160;270;160;50" dur="2s" repeatCount="indefinite" />
+        <animate attributeName="cy" values="50;85;50;85;50" dur="2s" repeatCount="indefinite" />
+      </circle>
+      <line x1="150" y1="75" x2="170" y2="75" stroke="#ff2a85" stroke-width="4">
+        <animate attributeName="x1" values="40;150;260;150;40" dur="2s" repeatCount="indefinite" />
+        <animate attributeName="x2" values="60;170;280;170;60" dur="2s" repeatCount="indefinite" />
+        <animate attributeName="y1" values="55;90;55;90;55" dur="2s" repeatCount="indefinite" />
+        <animate attributeName="y2" values="55;90;55;90;55" dur="2s" repeatCount="indefinite" />
+      </line>
+    </g>
+    <text x="160" y="25" fill="#ff2a85" font-family="sans-serif" font-weight="bold" font-size="12" text-anchor="middle">16 ILLUMINATED NIGHT RUNS</text>
+  </svg>
+</div>
+
+<div class="retro-card">
+  <h2>Action & Terrain Media</h2>
+  <div class="media-grid">
+    <div>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/Snowboarder_in_halfpipe.jpg" alt="Mt. Spokane Halfpipe Night Shred" class="mountain-img">
+      <p><b>Night Shredding & Halfpipe:</b> 16 illuminated trails under the stars.</p>
+    </div>
+    <div>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Snowboard-Negative0-18-16A%281%29.jpg" alt="Freestyle Air over Mt. Spokane" class="mountain-img">
+      <p><b>Lodge 2 Sunrise Laps:</b> Catching massive air in the park.</p>
+    </div>
+  </div>
+</div>
+
+<div class="retro-card">
+  <h2>Retro Stats & Night Skiing Overview</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Feature</th>
+        <th>Detail</th>
+        <th>Highlights</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Vertical Drop</td>
+        <td>2,000 ft</td>
+        <td>Summit elevation 5,889 ft</td>
+      </tr>
+      <tr>
+        <td>Night Skiing</td>
+        <td>16 Runs</td>
+        <td>Largest night skiing operation in the Inland Northwest</td>
+      </tr>
+      <tr>
+        <td>Distance from Spokane</td>
+        <td>28 Miles</td>
+        <td>Quick drive for after-class twilight laps</td>
+      </tr>
+      <tr>
+        <td>Terrain Parks</td>
+        <td>3 Parks</td>
+        <td>Progressive jumps, rails, and night-lit features</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<footer>Built by Christian Mohlenhoff &middot; BMIS 235</footer>
 
 </body>
 </html>
