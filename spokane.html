@@ -1,107 +1,105 @@
 <!DOCTYPE html>
 <!--
-  Author: Christian Mohlenhoff
-  GU username: cmohlenhoff
-  Course: BMIS 235 - HTML-3
+   Author: Christian Mohlenhoff
+   GU username: cmohlenhoff
+   Course: BMIS 235 - HTML-3
 -->
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="author" content="Christian Mohlenhoff">
-  <title>Mt. Spokane Ski & Snowboard Park - 80s Neon Night Shred</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8">
+    <meta name="author" content="Christian Mohlenhoff">
+    <title>Mt. Spokane Ski & Snowboard Park - 80s Neon Night Shred</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <nav>
-  <a href="index.html"><img src="img/home.png" alt="Home"></a>
-  <a href="schweitzer.html"><img src="img/schweitzer.png" alt="Schweitzer"></a>
-  <a href="spokane.html"><img src="img/mtspokane.png" alt="Mt. Spokane"></a>
-  <a href="fortynine.html"><img src="img/49degrees.png" alt="49 Degrees"></a>
+  <a href="index.html"><img src="img/home.png" alt="Base Lodge"></a>
+  <a href="schweitzer.html"><img src="img/schweitzer.png" alt="Schweitzer Bowls"></a>
+  <a href="spokane.html"><img src="img/mtspokane.png" alt="Spokane Nights"></a>
+  <a href="fortynine.html"><img src="img/49degrees.png" alt="49 North Glades"></a>
 </nav>
 
 <h1>Mt. Spokane Ski &amp; Snowboard Park</h1>
 
-<div class="retro-card">
-  <h2>Spokane's Local Non-Profit Shred Mountain</h2>
-  <p>Just 28 miles northeast of Spokane, Mt. Spokane Ski &amp; Snowboard Park delivers legendary PNW steeze with 1,704 skiable acres, 52 runs, and a vibrant non-profit community spirit. It's the ultimate home mountain for Gonzaga riders!</p>
-</div>
-
-<!-- Animated SVG/CSS "NIGHT SKIING NEON SHRED" Animation -->
-<div class="retro-card" style="text-align: center;">
-  <h2>⚡ NIGHT SKIING NEON SHRED ANIMATION ⚡</h2>
-  <svg width="320" height="120" viewBox="0 0 320 120" style="background:#0b192c; border:2px solid #ff2a85; border-radius:10px; box-shadow:0 0 15px #ff2a85;">
-    <!-- Neon Searchlight / Floodlight -->
-    <polygon points="160,0 40,120 280,120" fill="rgba(0,245,212,0.15)" />
-    <!-- Halfpipe curve -->
-    <path d="M 30 40 Q 160 120 290 40" fill="none" stroke="#00f5d4" stroke-width="4" />
-    <!-- Animated Snowboarder under night lights -->
-    <g>
-      <circle cx="160" cy="70" r="5" fill="#fee440">
-        <animate attributeName="cx" values="50;160;270;160;50" dur="2s" repeatCount="indefinite" />
-        <animate attributeName="cy" values="50;85;50;85;50" dur="2s" repeatCount="indefinite" />
-      </circle>
-      <line x1="150" y1="75" x2="170" y2="75" stroke="#ff2a85" stroke-width="4">
-        <animate attributeName="x1" values="40;150;260;150;40" dur="2s" repeatCount="indefinite" />
-        <animate attributeName="x2" values="60;170;280;170;60" dur="2s" repeatCount="indefinite" />
-        <animate attributeName="y1" values="55;90;55;90;55" dur="2s" repeatCount="indefinite" />
-        <animate attributeName="y2" values="55;90;55;90;55" dur="2s" repeatCount="indefinite" />
-      </line>
-    </g>
-    <text x="160" y="25" fill="#ff2a85" font-family="sans-serif" font-weight="bold" font-size="12" text-anchor="middle">16 ILLUMINATED NIGHT RUNS</text>
-  </svg>
-</div>
-
-<div class="retro-card">
-  <h2>Action & Terrain Media</h2>
-  <div class="media-grid">
+<div class="resort-detail">
+  <div class="mountain-grid">
     <div>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/Snowboarder_in_halfpipe.jpg" alt="Mt. Spokane Halfpipe Night Shred" class="mountain-img">
-      <p><b>Night Shredding & Halfpipe:</b> 16 illuminated trails under the stars.</p>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Night_Skiing_at_Mt._Spokane.jpg" alt="Mt. Spokane Night Skiing" class="mountain-img">
+      <p><b>Night Skiing Capital:</b> Extensive illuminated night runs overlooking the Spokane city lights.</p>
     </div>
-    <div>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Snowboard-Negative0-18-16A%281%29.jpg" alt="Freestyle Air over Mt. Spokane" class="mountain-img">
-      <p><b>Lodge 2 Sunrise Laps:</b> Catching massive air in the park.</p>
+    <div class="stats-box">
+      <h2>Resort Stats</h2>
+      <ul>
+        <li><b>Vertical Drop:</b> 2,000 ft</li>
+        <li><b>Skiable Acres:</b> 1,704 acres</li>
+        <li><b>Lifts:</b> 6 Chairlifts</li>
+        <li><b>Night Skiing:</b> 16 Illuminated Trails</li>
+      </ul>
     </div>
   </div>
 </div>
 
-<div class="retro-card">
-  <h2>Retro Stats & Night Skiing Overview</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Feature</th>
-        <th>Detail</th>
-        <th>Highlights</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Vertical Drop</td>
-        <td>2,000 ft</td>
-        <td>Summit elevation 5,889 ft</td>
-      </tr>
-      <tr>
-        <td>Night Skiing</td>
-        <td>16 Runs</td>
-        <td>Largest night skiing operation in the Inland Northwest</td>
-      </tr>
-      <tr>
-        <td>Distance from Spokane</td>
-        <td>28 Miles</td>
-        <td>Quick drive for after-class twilight laps</td>
-      </tr>
-      <tr>
-        <td>Terrain Parks</td>
-        <td>3 Parks</td>
-        <td>Progressive jumps, rails, and night-lit features</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+<script>
+(function generateNavButtons() {
+  const buttonConfigs = [
+    { href: 'index.html', label: 'BASE LODGE' },
+    { href: 'schweitzer.html', label: 'SCHWEITZER BOWLS' },
+    { href: 'spokane.html', label: 'SPOKANE NIGHTS' },
+    { href: 'fortynine.html', label: '49° NORTH GLADES' }
+  ];
 
-<footer>Built by Christian Mohlenhoff &middot; BMIS 235</footer>
+  const navImgs = document.querySelectorAll('nav img');
+  navImgs.forEach((img, index) => {
+    const config = buttonConfigs[index];
+    if (!config) return;
+
+    const canvas = document.createElement('canvas');
+    canvas.width = 210;
+    canvas.height = 50;
+    const ctx = canvas.getContext('2d');
+
+    const grad = ctx.createLinearGradient(0, 0, 0, 50);
+    grad.addColorStop(0, '#1f2937');
+    grad.addColorStop(0.5, '#111827');
+    grad.addColorStop(1, '#0f172a');
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, 210, 50);
+
+    ctx.lineWidth = 2;
+    ctx.strokeStyle = '#38bdf8';
+    ctx.beginPath();
+    ctx.moveTo(0, 50); ctx.lineTo(0, 0); ctx.lineTo(210, 0);
+    ctx.stroke();
+
+    ctx.strokeStyle = '#ec4899';
+    ctx.beginPath();
+    ctx.moveTo(210, 0); ctx.lineTo(210, 50); ctx.lineTo(0, 50);
+    ctx.stroke();
+
+    ctx.strokeStyle = '#334155';
+    ctx.strokeRect(3, 3, 204, 44);
+
+    ctx.strokeStyle = 'rgba(56, 189, 248, 0.12)';
+    ctx.lineWidth = 1;
+    for (let x = 15; x < 210; x += 15) {
+      ctx.beginPath(); ctx.moveTo(x, 4); ctx.lineTo(x, 46); ctx.stroke();
+    }
+
+    ctx.fillStyle = '#ffffff';
+    ctx.shadowColor = '#38bdf8';
+    ctx.shadowBlur = 4;
+    ctx.font = '900 13px "Segoe UI", Arial, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(config.label, 105, 25);
+
+    img.src = canvas.toDataURL('image/png');
+    img.width = 210;
+    img.height = 50;
+  });
+})();
+</script>
 
 </body>
 </html>
