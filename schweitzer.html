@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <!--
-   Author: Christian Mohlenhoff
-   GU username: cmohlenhoff
-   Course: BMIS 235 - HTML-3
+  Author: Christian Mohlenhoff
+  GU username: cmohlenhoff
+  Course: BMIS 235 - HTML-3
 -->
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="author" content="Christian Mohlenhoff">
-  <title>Schweitzer Mountain Resort</title>
+  <title>Schweitzer Mountain Resort - 80s PNW Shred</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -20,22 +20,94 @@
   <a href="fortynine.html"><img src="img/49degrees.png" alt="49 Degrees"></a>
 </nav>
 
-  <h1>Schweitzer Mountain Resort</h1>
-  
-  <p>
-    Schweitzer is the largest ski resort in Idaho and Washington, offering 2,900 acres of terrain overlooking Lake Pend Oreille.
-  </p>
-  <p>
-    Located near Sandpoint, Idaho, Schweitzer boasts a vertical drop of 2,400 feet, breathtaking views, and amazing tree skiing.
-  </p>
-  <p>
-    Visit the <a href="https://www.schweitzer.com">Schweitzer Official Website</a> for trail maps and snow conditions.
-  </p>
-  <p>
-    Questions? <a href="mailto:cmohlenhoff@zagmail.gonzaga.edu">Email me</a>
-  </p>
+<h1>Schweitzer Mountain Resort</h1>
 
-  <footer>Built by Christian Mohlenhoff &middot; BMIS 235</footer>
+<div class="retro-card">
+  <h2>The King of the Selkirks</h2>
+  <p>Located near Sandpoint, Idaho, Schweitzer boasts 2,900 acres of terrain overlooking Lake Pend Oreille. With 92 trails, 10 lifts, and deep Outback powder stashes, it is an absolute PNW winter paradise!</p>
+</div>
+
+<!-- Animated SVG/CSS retro 80s ski-jump loop graphic -->
+<div class="retro-card" style="text-align: center;">
+  <h2>⚡ RETRO 80s SKI-JUMP GRAPHIC ⚡</h2>
+  <svg width="320" height="120" viewBox="0 0 320 120" style="background:#0b192c; border:2px solid #00f5d4; border-radius:10px; box-shadow:0 0 12px #00f5d4;">
+    <defs>
+      <linearGradient id="neonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#00f5d4" />
+        <stop offset="100%" stop-color="#ff2a85" />
+      </linearGradient>
+    </defs>
+    <!-- Ramp -->
+    <path d="M 20 100 Q 100 100 150 70 L 170 50" fill="none" stroke="#fee440" stroke-width="4" />
+    <!-- Mountain line -->
+    <path d="M 0 110 L 120 110 L 200 40 L 320 110" fill="none" stroke="#102a26" stroke-width="3" />
+    <!-- Animated Skier Graphic -->
+    <g>
+      <circle cx="190" cy="35" r="6" fill="#00f5d4">
+        <animate attributeName="cy" values="45;20;45" dur="1.5s" repeatCount="indefinite" />
+        <animate attributeName="cx" values="170;240;170" dur="1.5s" repeatCount="indefinite" />
+      </circle>
+      <line x1="180" y1="45" x2="200" y2="25" stroke="#ff2a85" stroke-width="4">
+        <animate attributeName="x1" values="160;230;160" dur="1.5s" repeatCount="indefinite" />
+        <animate attributeName="x2" values="180;250;180" dur="1.5s" repeatCount="indefinite" />
+        <animate attributeName="y1" values="55;30;55" dur="1.5s" repeatCount="indefinite" />
+        <animate attributeName="y2" values="35;10;35" dur="1.5s" repeatCount="indefinite" />
+      </line>
+    </g>
+    <text x="160" y="110" fill="#00f5d4" font-family="sans-serif" font-weight="bold" font-size="12" text-anchor="middle">OUTBACK POWDER JUMP LOOP</text>
+  </svg>
+</div>
+
+<div class="retro-card">
+  <h2>Mountain & Action Visuals</h2>
+  <div class="media-grid">
+    <div>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/8/86/Schweitzer_Mountain_Village.JPG" alt="Schweitzer Mountain Village" class="mountain-img">
+      <p><b>Schweitzer Village & Lake Pend Oreille:</b> Breathtaking alpine views.</p>
+    </div>
+    <div>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/e/ea/Freestyle_skiing_jump2.jpg" alt="Freestyle Air in Outback Bowl" class="mountain-img">
+      <p><b>Outback Bowl Air:</b> Launching into deep Idaho powder.</p>
+    </div>
+  </div>
+</div>
+
+<div class="retro-card">
+  <h2>Retro Trail & Stats Breakdown</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>Stats</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Vertical Drop</td>
+        <td>2,400 ft</td>
+        <td>Top elevation 6,400 ft to base elevation 4,000 ft</td>
+      </tr>
+      <tr>
+        <td>Skiable Terrain</td>
+        <td>2,900 acres</td>
+        <td>92 named trails plus open bowl skiing</td>
+      </tr>
+      <tr>
+        <td>Lifts</td>
+        <td>10 lifts</td>
+        <td>Includes Stella Express 6-person high-speed chair</td>
+      </tr>
+      <tr>
+        <td>Avg Snowfall</td>
+        <td>300 inches</td>
+        <td>Famous PNW powder & inland champagne snow</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<footer>Built by Christian Mohlenhoff &middot; BMIS 235</footer>
 
 </body>
 </html>
