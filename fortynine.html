@@ -1,105 +1,126 @@
 <!DOCTYPE html>
 <!--
-   Author: Christian Mohlenhoff
-   GU username: cmohlenhoff
-   Course: BMIS 235 - HTML-3
+  Author: Christian Mohlenhoff
+  GU username: cmohlenhoff
+  Course: BMIS 235 - HTML-3
 -->
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="author" content="Christian Mohlenhoff">
-    <title>49 Degrees North Mountain Resort - 80s PNW Glade Shred</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8">
+  <meta name="author" content="Christian Mohlenhoff">
+  <title>49° North Glades - Inland Northwest Winter Slopes</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <nav>
-  <a href="index.html"><img src="img/home.png" alt="Base Lodge"></a>
-  <a href="schweitzer.html"><img src="img/schweitzer.png" alt="Schweitzer Bowls"></a>
-  <a href="spokane.html"><img src="img/mtspokane.png" alt="Spokane Nights"></a>
-  <a href="fortynine.html"><img src="img/49degrees.png" alt="49 North Glades"></a>
+  <a href="index.html"><img src="img/home.png" alt="Base Lodge" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/e/ea/Freestyle_skiing_jump2.jpg';"></a>
+  <a href="schweitzer.html"><img src="img/schweitzer.png" alt="Schweitzer Bowls" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/e/ea/Freestyle_skiing_jump2.jpg';"></a>
+  <a href="spokane.html"><img src="img/mtspokane.png" alt="Spokane Nights" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/6/69/Snowboarder_in_halfpipe.jpg';"></a>
+  <a href="fortynine.html"><img src="img/49degrees.png" alt="49 North Glades" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/e/ea/Freestyle_skiing_jump2.jpg';"></a>
 </nav>
 
-<h1>49 Degrees North Mountain Resort</h1>
+<h1>49° North Mountain Resort</h1>
+<p style="text-align:center; color:#39ff14; font-weight:bold;">Chewelah, Washington &middot; Deep Powder &middot; Chewelah Peak Glades</p>
 
-<div class="resort-detail">
-  <div class="mountain-grid">
-    <div>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/3/37/Tree_Skiing_at_49_Degrees_North.jpg" alt="49 Degrees North Tree Skiing" class="mountain-img">
-      <p><b>Deep Glades &amp; Tree Runs:</b> Legendary tree skiing, wide open glades, and deep Inland Northwest powder.</p>
-    </div>
-    <div class="stats-box">
-      <h2>Resort Stats</h2>
-      <ul>
-        <li><b>Vertical Drop:</b> 1,850 ft</li>
-        <li><b>Skiable Acres:</b> 2,325 acres</li>
-        <li><b>Lifts:</b> 7 Lifts</li>
-        <li><b>Terrain:</b> 30% Beginner, 40% Intermediate, 30% Advanced</li>
-      </ul>
-    </div>
-  </div>
+<div style="max-width:900px; margin:20px auto; text-align:center;">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/e/ea/Freestyle_skiing_jump2.jpg" alt="Freestyle Powder Jump in Tree Glades" style="width:100%; max-height:400px; object-fit:cover; border-radius:10px; border:2px solid #39ff14;" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/e/ea/Freestyle_skiing_jump2.jpg';">
 </div>
 
-<script>
-(function generateNavButtons() {
-  const buttonConfigs = [
-    { href: 'index.html', label: 'BASE LODGE' },
-    { href: 'schweitzer.html', label: 'SCHWEITZER BOWLS' },
-    { href: 'spokane.html', label: 'SPOKANE NIGHTS' },
-    { href: 'fortynine.html', label: '49° NORTH GLADES' }
-  ];
+<div style="text-align:center; margin:30px auto; max-width:800px; background:#062016; border:3px solid #39ff14; border-radius:12px; padding:15px; box-shadow:0 0 20px rgba(57,255,20,0.4);">
+  <h2 style="color:#39ff14; margin-top:0;">🔴 TREE-RUN GLADE SHREDDER</h2>
+  <canvas id="gladeCanvas" width="700" height="260" style="background:#022c22; border-radius:8px; width:100%; max-width:700px;"></canvas>
+  <script>
+    (function() {
+      const cvs = document.getElementById('gladeCanvas');
+      if (!cvs) return;
+      const ctx = cvs.getContext('2d');
+      let posX = 350;
+      let time = 0;
 
-  const navImgs = document.querySelectorAll('nav img');
-  navImgs.forEach((img, index) => {
-    const config = buttonConfigs[index];
-    if (!config) return;
+      const trees = [];
+      for (let i = 0; i < 25; i++) {
+        trees.push({
+          x: Math.random() * 660 + 20,
+          y: Math.random() * 240,
+          size: Math.random() * 15 + 15
+        });
+      }
 
-    const canvas = document.createElement('canvas');
-    canvas.width = 210;
-    canvas.height = 50;
-    const ctx = canvas.getContext('2d');
+      function render() {
+        time += 0.03;
+        ctx.clearRect(0,0,cvs.width,cvs.height);
 
-    const grad = ctx.createLinearGradient(0, 0, 0, 50);
-    grad.addColorStop(0, '#1f2937');
-    grad.addColorStop(0.5, '#111827');
-    grad.addColorStop(1, '#0f172a');
-    ctx.fillStyle = grad;
-    ctx.fillRect(0, 0, 210, 50);
+        ctx.fillStyle = '#064e3b';
+        ctx.fillRect(0,0,cvs.width,cvs.height);
 
-    ctx.lineWidth = 2;
-    ctx.strokeStyle = '#38bdf8';
-    ctx.beginPath();
-    ctx.moveTo(0, 50); ctx.lineTo(0, 0); ctx.lineTo(210, 0);
-    ctx.stroke();
+        trees.forEach(t => {
+          t.y += 2;
+          if (t.y > cvs.height + 20) {
+            t.y = -20;
+            t.x = Math.random() * 660 + 20;
+          }
 
-    ctx.strokeStyle = '#ec4899';
-    ctx.beginPath();
-    ctx.moveTo(210, 0); ctx.lineTo(210, 50); ctx.lineTo(0, 50);
-    ctx.stroke();
+          ctx.fillStyle = '#047857';
+          ctx.beginPath();
+          ctx.moveTo(t.x, t.y - t.size);
+          ctx.lineTo(t.x - t.size/1.5, t.y + t.size/2);
+          ctx.lineTo(t.x + t.size/1.5, t.y + t.size/2);
+          ctx.fill();
 
-    ctx.strokeStyle = '#334155';
-    ctx.strokeRect(3, 3, 204, 44);
+          ctx.fillStyle = '#f8fafc';
+          ctx.beginPath();
+          ctx.moveTo(t.x, t.y - t.size);
+          ctx.lineTo(t.x - t.size/3, t.y - t.size/3);
+          ctx.lineTo(t.x + t.size/3, t.y - t.size/3);
+          ctx.fill();
+        });
 
-    ctx.strokeStyle = 'rgba(56, 189, 248, 0.12)';
-    ctx.lineWidth = 1;
-    for (let x = 15; x < 210; x += 15) {
-      ctx.beginPath(); ctx.moveTo(x, 4); ctx.lineTo(x, 46); ctx.stroke();
-    }
+        posX += Math.sin(time * 2) * 4;
+        if (posX < 50) posX = 50;
+        if (posX > cvs.width - 50) posX = cvs.width - 50;
 
-    ctx.fillStyle = '#ffffff';
-    ctx.shadowColor = '#38bdf8';
-    ctx.shadowBlur = 4;
-    ctx.font = '900 13px "Segoe UI", Arial, sans-serif';
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'middle';
-    ctx.fillText(config.label, 105, 25);
+        ctx.save();
+        ctx.translate(posX, 140);
+        ctx.rotate(Math.cos(time * 2) * 0.3);
+        ctx.fillStyle = '#ff007f';
+        ctx.fillRect(-6, -10, 12, 20);
+        ctx.fillStyle = '#00f0ff';
+        ctx.beginPath(); ctx.arc(0, -14, 6, 0, Math.PI*2); ctx.fill();
+        ctx.restore();
 
-    img.src = canvas.toDataURL('image/png');
-    img.width = 210;
-    img.height = 50;
-  });
-})();
-</script>
+        ctx.fillStyle = '#39ff14';
+        ctx.font = 'bold 14px monospace';
+        ctx.textAlign = 'center';
+        ctx.fillText('CHEWELAH PEAK DEEP POWDER GLADE CARVER - ACTIVE', cvs.width / 2, 25);
+
+        requestAnimationFrame(render);
+      }
+      render();
+    })();
+  </script>
+</div>
+
+<div style="max-width:900px; margin:30px auto; color:#fff; background:#1e293b; padding:20px; border-radius:10px; border:1px solid #39ff14;">
+  <h2 style="text-align:center; color:#39ff14;">49° North Detailed Resort Stats</h2>
+  <table style="width:100%; border-collapse:collapse; text-align:left;">
+    <tbody>
+      <tr style="border-bottom:1px solid #334155;"><th style="padding:10px; color:#00f0ff;">Top Elevation</th><td style="padding:10px;">5,773 ft</td></tr>
+      <tr style="border-bottom:1px solid #334155;"><th style="padding:10px; color:#00f0ff;">Base Elevation</th><td style="padding:10px;">3,923 ft</td></tr>
+      <tr style="border-bottom:1px solid #334155;"><th style="padding:10px; color:#00f0ff;">Vertical Drop</th><td style="padding:10px;">1,850 ft</td></tr>
+      <tr style="border-bottom:1px solid #334155;"><th style="padding:10px; color:#00f0ff;">Skiable Terrain</th><td style="padding:10px;">2,325 acres</td></tr>
+      <tr style="border-bottom:1px solid #334155;"><th style="padding:10px; color:#00f0ff;">Tree Skiing</th><td style="padding:10px;">Extensive East &amp; West Basin Tree Glades</td></tr>
+      <tr style="border-bottom:1px solid #334155;"><th style="padding:10px; color:#00f0ff;">Number of Trails</th><td style="padding:10px;">90 Designated Runs</td></tr>
+      <tr><th style="padding:10px; color:#00f0ff;">Lifts System</th><td style="padding:10px;">7 Lifts (including Northern Sunrise High-Speed Quad)</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div style="text-align:center; margin:30px 0;">
+  <a href="index.html" style="color:#00f0ff; text-decoration:none; font-weight:bold; font-size:18px;">← Return to Base Lodge Main Slopes</a>
+</div>
+
+<footer>Built by Christian Mohlenhoff &middot; BMIS 235</footer>
 
 </body>
 </html>
