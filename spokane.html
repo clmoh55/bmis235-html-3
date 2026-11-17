@@ -1,105 +1,132 @@
 <!DOCTYPE html>
 <!--
-   Author: Christian Mohlenhoff
-   GU username: cmohlenhoff
-   Course: BMIS 235 - HTML-3
+  Author: Christian Mohlenhoff
+  GU username: cmohlenhoff
+  Course: BMIS 235 - HTML-3
 -->
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="author" content="Christian Mohlenhoff">
-    <title>Mt. Spokane Ski & Snowboard Park - 80s Neon Night Shred</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8">
+  <meta name="author" content="Christian Mohlenhoff">
+  <title>Spokane Nights - Inland Northwest Winter Slopes</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <nav>
-  <a href="index.html"><img src="img/home.png" alt="Base Lodge"></a>
-  <a href="schweitzer.html"><img src="img/schweitzer.png" alt="Schweitzer Bowls"></a>
-  <a href="spokane.html"><img src="img/mtspokane.png" alt="Spokane Nights"></a>
-  <a href="fortynine.html"><img src="img/49degrees.png" alt="49 North Glades"></a>
+  <a href="index.html"><img src="img/home.png" alt="Base Lodge" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/e/ea/Freestyle_skiing_jump2.jpg';"></a>
+  <a href="schweitzer.html"><img src="img/schweitzer.png" alt="Schweitzer Bowls" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/e/ea/Freestyle_skiing_jump2.jpg';"></a>
+  <a href="spokane.html"><img src="img/mtspokane.png" alt="Spokane Nights" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/6/69/Snowboarder_in_halfpipe.jpg';"></a>
+  <a href="fortynine.html"><img src="img/49degrees.png" alt="49 North Glades" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/e/ea/Freestyle_skiing_jump2.jpg';"></a>
 </nav>
 
 <h1>Mt. Spokane Ski &amp; Snowboard Park</h1>
+<p style="text-align:center; color:#ff007f; font-weight:bold;">Mead, Washington &middot; Night Skiing Capital &middot; 16 Illuminated Night Trails</p>
 
-<div class="resort-detail">
-  <div class="mountain-grid">
-    <div>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Night_Skiing_at_Mt._Spokane.jpg" alt="Mt. Spokane Night Skiing" class="mountain-img">
-      <p><b>Night Skiing Capital:</b> Extensive illuminated night runs overlooking the Spokane city lights.</p>
-    </div>
-    <div class="stats-box">
-      <h2>Resort Stats</h2>
-      <ul>
-        <li><b>Vertical Drop:</b> 2,000 ft</li>
-        <li><b>Skiable Acres:</b> 1,704 acres</li>
-        <li><b>Lifts:</b> 6 Chairlifts</li>
-        <li><b>Night Skiing:</b> 16 Illuminated Trails</li>
-      </ul>
-    </div>
-  </div>
+<div style="max-width:900px; margin:20px auto; text-align:center;">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/Snowboarder_in_halfpipe.jpg" alt="Halfpipe Snowboard Send under Night Lights" style="width:100%; max-height:400px; object-fit:cover; border-radius:10px; border:2px solid #00f0ff;" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/6/69/Snowboarder_in_halfpipe.jpg';">
 </div>
 
-<script>
-(function generateNavButtons() {
-  const buttonConfigs = [
-    { href: 'index.html', label: 'BASE LODGE' },
-    { href: 'schweitzer.html', label: 'SCHWEITZER BOWLS' },
-    { href: 'spokane.html', label: 'SPOKANE NIGHTS' },
-    { href: 'fortynine.html', label: '49° NORTH GLADES' }
-  ];
+<div style="text-align:center; margin:30px auto; max-width:800px; background:#090d16; border:3px solid #ff007f; border-radius:12px; padding:15px; box-shadow:0 0 20px rgba(255,0,127,0.5);">
+  <h2 style="color:#ff007f; margin-top:0;">🔴 NIGHT SKIING NEON SHRED</h2>
+  <canvas id="spokaneNightCanvas" width="700" height="260" style="background:#030712; border-radius:8px; width:100%; max-width:700px;"></canvas>
+  <script>
+    (function() {
+      const cvs = document.getElementById('spokaneNightCanvas');
+      if (!cvs) return;
+      const ctx = cvs.getContext('2d');
+      let angle1 = 0, angle2 = Math.PI;
 
-  const navImgs = document.querySelectorAll('nav img');
-  navImgs.forEach((img, index) => {
-    const config = buttonConfigs[index];
-    if (!config) return;
+      function render() {
+        angle1 += 0.02;
+        angle2 += 0.025;
+        ctx.clearRect(0,0,cvs.width,cvs.height);
 
-    const canvas = document.createElement('canvas');
-    canvas.width = 210;
-    canvas.height = 50;
-    const ctx = canvas.getContext('2d');
+        ctx.fillStyle = '#0f172a';
+        ctx.fillRect(0,0,cvs.width,cvs.height);
 
-    const grad = ctx.createLinearGradient(0, 0, 0, 50);
-    grad.addColorStop(0, '#1f2937');
-    grad.addColorStop(0.5, '#111827');
-    grad.addColorStop(1, '#0f172a');
-    ctx.fillStyle = grad;
-    ctx.fillRect(0, 0, 210, 50);
+        ctx.save();
+        ctx.beginPath();
+        ctx.moveTo(150, 240);
+        let beam1X = 150 + Math.sin(angle1) * 220;
+        ctx.lineTo(beam1X - 60, 0);
+        ctx.lineTo(beam1X + 60, 0);
+        ctx.closePath();
+        let grad1 = ctx.createLinearGradient(150,240, beam1X, 0);
+        grad1.addColorStop(0, 'rgba(255, 0, 127, 0.8)');
+        grad1.addColorStop(1, 'rgba(255, 0, 127, 0)');
+        ctx.fillStyle = grad1;
+        ctx.fill();
+        ctx.restore();
 
-    ctx.lineWidth = 2;
-    ctx.strokeStyle = '#38bdf8';
-    ctx.beginPath();
-    ctx.moveTo(0, 50); ctx.lineTo(0, 0); ctx.lineTo(210, 0);
-    ctx.stroke();
+        ctx.save();
+        ctx.beginPath();
+        ctx.moveTo(550, 240);
+        let beam2X = 550 + Math.cos(angle2) * 220;
+        ctx.lineTo(beam2X - 60, 0);
+        ctx.lineTo(beam2X + 60, 0);
+        ctx.closePath();
+        let grad2 = ctx.createLinearGradient(550,240, beam2X, 0);
+        grad2.addColorStop(0, 'rgba(0, 240, 255, 0.8)');
+        grad2.addColorStop(1, 'rgba(0, 240, 255, 0)');
+        ctx.fillStyle = grad2;
+        ctx.fill();
+        ctx.restore();
 
-    ctx.strokeStyle = '#ec4899';
-    ctx.beginPath();
-    ctx.moveTo(210, 0); ctx.lineTo(210, 50); ctx.lineTo(0, 50);
-    ctx.stroke();
+        ctx.fillStyle = '#1e1b4b';
+        ctx.beginPath();
+        ctx.moveTo(0, 260);
+        ctx.lineTo(150, 120);
+        ctx.lineTo(350, 80);
+        ctx.lineTo(550, 140);
+        ctx.lineTo(700, 260);
+        ctx.fill();
 
-    ctx.strokeStyle = '#334155';
-    ctx.strokeRect(3, 3, 204, 44);
+        ctx.lineWidth = 2;
+        for (let i = 0; i < 16; i++) {
+          let startX = 200 + (i * 20);
+          let startY = 90 + Math.sin(i) * 20;
+          let endX = 50 + (i * 40);
+          let endY = 250;
+          ctx.strokeStyle = (i % 2 === 0) ? '#00f0ff' : '#ff007f';
+          ctx.beginPath();
+          ctx.moveTo(startX, startY);
+          ctx.quadraticCurveTo((startX+endX)/2 + Math.sin(angle1+i)*15, (startY+endY)/2, endX, endY);
+          ctx.stroke();
+        }
 
-    ctx.strokeStyle = 'rgba(56, 189, 248, 0.12)';
-    ctx.lineWidth = 1;
-    for (let x = 15; x < 210; x += 15) {
-      ctx.beginPath(); ctx.moveTo(x, 4); ctx.lineTo(x, 46); ctx.stroke();
-    }
+        ctx.fillStyle = '#39ff14';
+        ctx.font = 'bold 15px monospace';
+        ctx.textAlign = 'center';
+        ctx.fillText('16 ILLUMINATED NIGHT TRAILS ACTIVE - LIGHTS ON UNTIL 9 PM', cvs.width / 2, 30);
 
-    ctx.fillStyle = '#ffffff';
-    ctx.shadowColor = '#38bdf8';
-    ctx.shadowBlur = 4;
-    ctx.font = '900 13px "Segoe UI", Arial, sans-serif';
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'middle';
-    ctx.fillText(config.label, 105, 25);
+        requestAnimationFrame(render);
+      }
+      render();
+    })();
+  </script>
+</div>
 
-    img.src = canvas.toDataURL('image/png');
-    img.width = 210;
-    img.height = 50;
-  });
-})();
-</script>
+<div style="max-width:900px; margin:30px auto; color:#fff; background:#1e293b; padding:20px; border-radius:10px; border:1px solid #ff007f;">
+  <h2 style="text-align:center; color:#ff007f;">Mt. Spokane Detailed Resort Stats</h2>
+  <table style="width:100%; border-collapse:collapse; text-align:left;">
+    <tbody>
+      <tr style="border-bottom:1px solid #334155;"><th style="padding:10px; color:#00f0ff;">Top Elevation</th><td style="padding:10px;">5,889 ft</td></tr>
+      <tr style="border-bottom:1px solid #334155;"><th style="padding:10px; color:#00f0ff;">Base Elevation</th><td style="padding:10px;">3,889 ft</td></tr>
+      <tr style="border-bottom:1px solid #334155;"><th style="padding:10px; color:#00f0ff;">Vertical Drop</th><td style="padding:10px;">2,000 ft</td></tr>
+      <tr style="border-bottom:1px solid #334155;"><th style="padding:10px; color:#00f0ff;">Skiable Terrain</th><td style="padding:10px;">1,708 acres</td></tr>
+      <tr style="border-bottom:1px solid #334155;"><th style="padding:10px; color:#00f0ff;">Night Skiing</th><td style="padding:10px;">16 Illuminated Night Trails (Wed-Sat)</td></tr>
+      <tr style="border-bottom:1px solid #334155;"><th style="padding:10px; color:#00f0ff;">Number of Trails</th><td style="padding:10px;">52 Designated Runs + Terrain Parks</td></tr>
+      <tr><th style="padding:10px; color:#00f0ff;">Lifts System</th><td style="padding:10px;">6 Lifts (including Chair 6 Peak Express)</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div style="text-align:center; margin:30px 0;">
+  <a href="index.html" style="color:#00f0ff; text-decoration:none; font-weight:bold; font-size:18px;">← Return to Base Lodge Main Slopes</a>
+</div>
+
+<footer>Built by Christian Mohlenhoff &middot; BMIS 235</footer>
 
 </body>
 </html>
