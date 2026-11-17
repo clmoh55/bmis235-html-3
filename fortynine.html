@@ -1,99 +1,105 @@
 <!DOCTYPE html>
 <!--
-  Author: Christian Mohlenhoff
-  GU username: cmohlenhoff
-  Course: BMIS 235 - HTML-3
+   Author: Christian Mohlenhoff
+   GU username: cmohlenhoff
+   Course: BMIS 235 - HTML-3
 -->
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="author" content="Christian Mohlenhoff">
-  <title>49 Degrees North Mountain Resort - 80s PNW Glade Shred</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8">
+    <meta name="author" content="Christian Mohlenhoff">
+    <title>49 Degrees North Mountain Resort - 80s PNW Glade Shred</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <nav>
-  <a href="index.html"><img src="img/home.png" alt="Home"></a>
-  <a href="schweitzer.html"><img src="img/schweitzer.png" alt="Schweitzer"></a>
-  <a href="spokane.html"><img src="img/mtspokane.png" alt="Mt. Spokane"></a>
-  <a href="fortynine.html"><img src="img/49degrees.png" alt="49 Degrees"></a>
+  <a href="index.html"><img src="img/home.png" alt="Base Lodge"></a>
+  <a href="schweitzer.html"><img src="img/schweitzer.png" alt="Schweitzer Bowls"></a>
+  <a href="spokane.html"><img src="img/mtspokane.png" alt="Spokane Nights"></a>
+  <a href="fortynine.html"><img src="img/49degrees.png" alt="49 North Glades"></a>
 </nav>
 
 <h1>49 Degrees North Mountain Resort</h1>
 
-<div class="retro-card">
-  <h2>Chewelah Peak Glade &amp; Tree-Skiing Heaven</h2>
-  <p>Nestled in the Colville National Forest near Chewelah, WA, 49 Degrees North offers 2,325 acres of wide-open terrain, legendary tree glades, 1,851 ft of vertical drop, and Washington's longest high-speed quad chairlift!</p>
-</div>
-
-<!-- Animated SVG/CSS Tree-Run Glade Shredder Animation -->
-<div class="retro-card" style="text-align: center;">
-  <h2>⚡ TREE-RUN GLADE SHREDDER ANIMATION ⚡</h2>
-  <svg width="320" height="120" viewBox="0 0 320 120" style="background:#0b192c; border:2px solid #39ff14; border-radius:10px; box-shadow:0 0 15px #39ff14;">
-    <!-- Pine tree forest slalom line -->
-    <polygon points="40,110 55,50 70,110" fill="#102a26" stroke="#39ff14" stroke-width="1.5" />
-    <polygon points="140,110 155,40 170,110" fill="#102a26" stroke="#39ff14" stroke-width="1.5" />
-    <polygon points="240,110 255,50 270,110" fill="#102a26" stroke="#39ff14" stroke-width="1.5" />
-    
-    <!-- Slalom Track -->
-    <path d="M 20 20 Q 100 60 110 90 T 210 70 T 300 100" fill="none" stroke="#00f5d4" stroke-dasharray="6,4" stroke-width="3" />
-
-    <!-- Animated Skier weaving through glades -->
-    <circle cx="100" cy="50" r="6" fill="#ff2a85">
-      <animate attributeName="cx" values="30;100;190;280;30" dur="2.5s" repeatCount="indefinite" />
-      <animate attributeName="cy" values="20;60;70;100;20" dur="2.5s" repeatCount="indefinite" />
-    </circle>
-    
-    <text x="160" y="22" fill="#39ff14" font-family="sans-serif" font-weight="bold" font-size="12" text-anchor="middle">CHEWELAH PEAK POWDER GLADES</text>
-  </svg>
-</div>
-
-<div class="retro-card">
-  <h2>Action & Scenic Photography</h2>
-  <div class="media-grid">
+<div class="resort-detail">
+  <div class="mountain-grid">
     <div>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/International_Selkirk_Loop_-_Skiing_at_49_Degrees_North_-_NARA_-_7719616.jpg" alt="Skiing at 49 Degrees North" class="mountain-img">
-      <p><b>Historic Selkirk Shredding:</b> Powder turns at 49 Degrees North.</p>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/37/Tree_Skiing_at_49_Degrees_North.jpg" alt="49 Degrees North Tree Skiing" class="mountain-img">
+      <p><b>Deep Glades &amp; Tree Runs:</b> Legendary tree skiing, wide open glades, and deep Inland Northwest powder.</p>
     </div>
-    <div>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/Snowboarder_in_halfpipe.jpg" alt="Glade & Powder Action" class="mountain-img">
-      <p><b>Chewelah Basin Air:</b> Deep snow in the Sunrise Basin glades.</p>
+    <div class="stats-box">
+      <h2>Resort Stats</h2>
+      <ul>
+        <li><b>Vertical Drop:</b> 1,850 ft</li>
+        <li><b>Skiable Acres:</b> 2,325 acres</li>
+        <li><b>Lifts:</b> 7 Lifts</li>
+        <li><b>Terrain:</b> 30% Beginner, 40% Intermediate, 30% Advanced</li>
+      </ul>
     </div>
   </div>
 </div>
 
-<div class="retro-card">
-  <h2>Retro Stats & Mountain Profile</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Specification</th>
-        <th>Measurement</th>
-        <th>Notes</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Vertical Drop</td>
-        <td>1,851 ft</td>
-        <td>Peak elevation 5,774 ft to base 3,923 ft</td>
-      </tr>
-      <tr>
-        <td>Skiable Acres</td>
-        <td>2,325 acres</td>
-        <td>Second largest ski area in Washington State</td>
-      </tr>
-      <tr>
-        <td>Key Feature</td>
-        <td>Glade Skiing</td>
-        <td>Unmatched tree skiing and untouched powder pockets</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+<script>
+(function generateNavButtons() {
+  const buttonConfigs = [
+    { href: 'index.html', label: 'BASE LODGE' },
+    { href: 'schweitzer.html', label: 'SCHWEITZER BOWLS' },
+    { href: 'spokane.html', label: 'SPOKANE NIGHTS' },
+    { href: 'fortynine.html', label: '49° NORTH GLADES' }
+  ];
 
-<footer>Built by Christian Mohlenhoff &middot; BMIS 235</footer>
+  const navImgs = document.querySelectorAll('nav img');
+  navImgs.forEach((img, index) => {
+    const config = buttonConfigs[index];
+    if (!config) return;
+
+    const canvas = document.createElement('canvas');
+    canvas.width = 210;
+    canvas.height = 50;
+    const ctx = canvas.getContext('2d');
+
+    const grad = ctx.createLinearGradient(0, 0, 0, 50);
+    grad.addColorStop(0, '#1f2937');
+    grad.addColorStop(0.5, '#111827');
+    grad.addColorStop(1, '#0f172a');
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, 210, 50);
+
+    ctx.lineWidth = 2;
+    ctx.strokeStyle = '#38bdf8';
+    ctx.beginPath();
+    ctx.moveTo(0, 50); ctx.lineTo(0, 0); ctx.lineTo(210, 0);
+    ctx.stroke();
+
+    ctx.strokeStyle = '#ec4899';
+    ctx.beginPath();
+    ctx.moveTo(210, 0); ctx.lineTo(210, 50); ctx.lineTo(0, 50);
+    ctx.stroke();
+
+    ctx.strokeStyle = '#334155';
+    ctx.strokeRect(3, 3, 204, 44);
+
+    ctx.strokeStyle = 'rgba(56, 189, 248, 0.12)';
+    ctx.lineWidth = 1;
+    for (let x = 15; x < 210; x += 15) {
+      ctx.beginPath(); ctx.moveTo(x, 4); ctx.lineTo(x, 46); ctx.stroke();
+    }
+
+    ctx.fillStyle = '#ffffff';
+    ctx.shadowColor = '#38bdf8';
+    ctx.shadowBlur = 4;
+    ctx.font = '900 13px "Segoe UI", Arial, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(config.label, 105, 25);
+
+    img.src = canvas.toDataURL('image/png');
+    img.width = 210;
+    img.height = 50;
+  });
+})();
+</script>
 
 </body>
 </html>
