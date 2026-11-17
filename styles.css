@@ -25,9 +25,18 @@ nav img {
   border-radius: 8px;
 }
 
+nav img:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
 /* no underline or border around the image links */
 nav a {
   text-decoration: none;
+}
+
+a:hover {
+  color: #2e6f40;
 }
 
 h1 {
