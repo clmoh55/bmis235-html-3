@@ -1,62 +1,141 @@
 /* =====================================================================
-   styles.css · Inland NW Winter Slopes Brand Guide
+   styles.css · Neon 80s Ski/Snowboard × Pacific Northwest (PNW)
    ===================================================================== */
 
+:root {
+  --neon-cyan: #00f5d4;
+  --hot-magenta: #ff2a85;
+  --electric-lime: #39ff14;
+  --sunset-yellow: #fee440;
+  --pnw-bg: linear-gradient(180deg, #0b192c 0%, #102a26 55%, #162636 100%);
+  --ice-white: #e6f4f1;
+  --slate-panel: rgba(16, 42, 38, 0.9);
+}
+
 body {
-  font-family: 'Trebuchet MS', sans-serif;
-  background-color: #f4f7f6;
-  color: #1b365d;
+  font-family: 'Trebuchet MS', Verdana, sans-serif;
+  background: linear-gradient(180deg, #0b192c 0%, #102a26 55%, #162636 100%);
+  background-attachment: fixed;
+  color: #e6f4f1;
   margin: 0;
   padding: 0 20px 40px 20px;
+  min-height: 100vh;
 }
 
-/* the menu at the top of every page */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Trebuchet MS', 'Impact', 'Arial Black', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #00f5d4;
+  text-shadow: 0 0 8px #00f5d4, 3px 3px 0px #ff2a85;
+}
+
+/* Navigation bar */
 nav {
-  background-color: #1b365d;
+  background: #0f2220;
   padding: 14px;
   text-align: center;
+  border-bottom: 4px solid #00f5d4;
+  box-shadow: 0 4px 15px rgba(0, 245, 212, 0.35);
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 25px;
 }
 
-/* every image inside the menu is forced to the same height */
 nav img {
   height: 50px;
   margin: 4px;
-  vertical-align: middle;
+  border: 2px solid #00f5d4;
   border-radius: 8px;
+  transition: all 0.25s ease;
 }
 
-nav img:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+nav a:hover img, nav img:hover {
+  transform: translateY(-3px) scale(1.06);
+  border-color: #ff2a85;
+  box-shadow: 0 0 15px #ff2a85, 0 0 25px #00f5d4;
 }
 
-/* no underline or border around the image links */
-nav a {
+/* Links */
+a {
+  color: #00f5d4;
   text-decoration: none;
+  font-weight: bold;
+  transition: all 0.2s ease;
 }
 
 a:hover {
-  color: #2e6f40;
+  color: #ff2a85;
+  text-shadow: 0 0 8px #ff2a85;
+  text-decoration: underline;
 }
 
-h1 {
-  color: #1b365d;
-  text-align: center;
-  font-size: 40px;
-  border-bottom: 3px solid #2e6f40;
-  padding-bottom: 8px;
+/* Content Cards, Borders & Images */
+.retro-card {
+  background: linear-gradient(135deg, rgba(16, 42, 38, 0.9), rgba(22, 38, 54, 0.9));
+  border: 2px solid #00f5d4;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 0 15px rgba(0, 245, 212, 0.3), 4px 4px 0px #ff2a85;
 }
 
-p {
-  max-width: 600px;
-  margin: 20px auto;
-  font-size: 18px;
-  line-height: 1.5;
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin: 20px 0;
 }
 
+.mountain-img, .media-grid img, .retro-card img, img.action-img {
+  border: 3px solid #00f5d4;
+  border-radius: 12px;
+  box-shadow: 0 0 18px rgba(0, 245, 212, 0.4), 5px 5px 0px #ff2a85;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Tables & Badges */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background-color: rgba(16, 42, 38, 0.85);
+  border: 2px solid #00f5d4;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0, 245, 212, 0.3);
+}
+
+th {
+  background-color: #102a26;
+  color: #fee440;
+  border-bottom: 2px solid #ff2a85;
+  padding: 12px;
+  text-transform: uppercase;
+  font-family: 'Trebuchet MS', 'Impact', sans-serif;
+  letter-spacing: 1px;
+}
+
+td {
+  padding: 10px;
+  border-bottom: 1px solid rgba(0, 245, 212, 0.2);
+  color: #e6f4f1;
+}
+
+tr:nth-child(even) {
+  background-color: rgba(22, 38, 54, 0.6);
+}
+
+/* Footer */
 footer {
-  text-align: center;
   margin-top: 40px;
-  font-size: 14px;
-  color: #777;
+  padding: 20px;
+  text-align: center;
+  background: #0f2220;
+  border-top: 4px solid #00f5d4;
+  border-radius: 10px;
+  box-shadow: 0 -4px 15px rgba(0, 245, 212, 0.35);
+  color: #e6f4f1;
+  font-family: 'Trebuchet MS', sans-serif;
 }
