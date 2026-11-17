@@ -8,7 +8,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="author" content="Christian Mohlenhoff">
-  <title>49 Degrees North Mountain Resort</title>
+  <title>49 Degrees North Mountain Resort - 80s PNW Glade Shred</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -22,15 +22,78 @@
 
 <h1>49 Degrees North Mountain Resort</h1>
 
-<p>
-  49 Degrees North is located in Chewelah, Washington, offering over 2,325 acres of terrain across two peaks.
-</p>
-<p>
-  With wide open cruisers, awesome glades, and 1,850 feet of vertical elevation, 49 Degrees North delivers a top-tier ski experience.
-</p>
-<p>
-  Learn more at the <a href="https://www.ski49n.com">49 Degrees North Official Website</a>.
-</p>
-<p>
-  Questions? <a href="mailto:cmohlenhoff@zagmail.gonzaga.edu">Email me</a>
-</p>
+<div class="retro-card">
+  <h2>Chewelah Peak Glade &amp; Tree-Skiing Heaven</h2>
+  <p>Nestled in the Colville National Forest near Chewelah, WA, 49 Degrees North offers 2,325 acres of wide-open terrain, legendary tree glades, 1,851 ft of vertical drop, and Washington's longest high-speed quad chairlift!</p>
+</div>
+
+<!-- Animated SVG/CSS Tree-Run Glade Shredder Animation -->
+<div class="retro-card" style="text-align: center;">
+  <h2>⚡ TREE-RUN GLADE SHREDDER ANIMATION ⚡</h2>
+  <svg width="320" height="120" viewBox="0 0 320 120" style="background:#0b192c; border:2px solid #39ff14; border-radius:10px; box-shadow:0 0 15px #39ff14;">
+    <!-- Pine tree forest slalom line -->
+    <polygon points="40,110 55,50 70,110" fill="#102a26" stroke="#39ff14" stroke-width="1.5" />
+    <polygon points="140,110 155,40 170,110" fill="#102a26" stroke="#39ff14" stroke-width="1.5" />
+    <polygon points="240,110 255,50 270,110" fill="#102a26" stroke="#39ff14" stroke-width="1.5" />
+    
+    <!-- Slalom Track -->
+    <path d="M 20 20 Q 100 60 110 90 T 210 70 T 300 100" fill="none" stroke="#00f5d4" stroke-dasharray="6,4" stroke-width="3" />
+
+    <!-- Animated Skier weaving through glades -->
+    <circle cx="100" cy="50" r="6" fill="#ff2a85">
+      <animate attributeName="cx" values="30;100;190;280;30" dur="2.5s" repeatCount="indefinite" />
+      <animate attributeName="cy" values="20;60;70;100;20" dur="2.5s" repeatCount="indefinite" />
+    </circle>
+    
+    <text x="160" y="22" fill="#39ff14" font-family="sans-serif" font-weight="bold" font-size="12" text-anchor="middle">CHEWELAH PEAK POWDER GLADES</text>
+  </svg>
+</div>
+
+<div class="retro-card">
+  <h2>Action & Scenic Photography</h2>
+  <div class="media-grid">
+    <div>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/International_Selkirk_Loop_-_Skiing_at_49_Degrees_North_-_NARA_-_7719616.jpg" alt="Skiing at 49 Degrees North" class="mountain-img">
+      <p><b>Historic Selkirk Shredding:</b> Powder turns at 49 Degrees North.</p>
+    </div>
+    <div>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/Snowboarder_in_halfpipe.jpg" alt="Glade & Powder Action" class="mountain-img">
+      <p><b>Chewelah Basin Air:</b> Deep snow in the Sunrise Basin glades.</p>
+    </div>
+  </div>
+</div>
+
+<div class="retro-card">
+  <h2>Retro Stats & Mountain Profile</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Specification</th>
+        <th>Measurement</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Vertical Drop</td>
+        <td>1,851 ft</td>
+        <td>Peak elevation 5,774 ft to base 3,923 ft</td>
+      </tr>
+      <tr>
+        <td>Skiable Acres</td>
+        <td>2,325 acres</td>
+        <td>Second largest ski area in Washington State</td>
+      </tr>
+      <tr>
+        <td>Key Feature</td>
+        <td>Glade Skiing</td>
+        <td>Unmatched tree skiing and untouched powder pockets</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<footer>Built by Christian Mohlenhoff &middot; BMIS 235</footer>
+
+</body>
+</html>
