@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <!--
-  Author: Christian Mohlenhoff
-  GU username: cmohlenhoff
-  Course: BMIS 235 - HTML-3
+   Author: Christian Mohlenhoff
+   GU username: cmohlenhoff
+   Course: BMIS 235 - HTML-3
 -->
 <html lang="en">
 <head>
@@ -16,115 +16,21 @@
 <nav>
   <a href="index.html"><img src="img/home.png" alt="Home"></a>
   <a href="schweitzer.html"><img src="img/schweitzer.png" alt="Schweitzer"></a>
-  <a href="spokane.html"><img src="img/spokane.png" alt="Mt. Spokane"></a>
-  <a href="fortynine.html"><img src="img/fortynine.png" alt="49 Degrees"></a>
+  <a href="spokane.html"><img src="img/mtspokane.png" alt="Mt. Spokane"></a>
+  <a href="fortynine.html"><img src="img/49degrees.png" alt="49 Degrees"></a>
 </nav>
 
-<h1>Inland Northwest Winter Slopes</h1>
-
-<p>
-  Welcome to Inland Northwest Winter Slopes! Explore the premier ski resorts located near Spokane, Washington, including Schweitzer, Mt. Spokane, and 49 Degrees North.
-</p>
-<p>
-  Whether you are looking for vast powder bowls, night skiing, or scenic glades, our regional mountains have something for every winter enthusiast.
-</p>
-
-<div class="showcase">
-  <!-- CSS styling for interactive mountain explorer graphic -->
-  <style>
-    .showcase {
-      background-color: #f4f7f6;
-      border: 2px solid #2e6f40;
-      border-radius: 8px;
-      padding: 15px;
-      margin: 20px 0;
-      max-height: 480px;
-      font-family: 'Trebuchet MS', sans-serif;
-    }
-    .showcase-title {
-      color: #1b365d;
-      font-size: 20px;
-      margin-bottom: 10px;
-      text-align: center;
-    }
-    .showcase-buttons {
-      display: flex;
-      gap: 10px;
-      justify-content: center;
-      margin-bottom: 15px;
-    }
-    .showcase-btn {
-      background-color: #1b365d;
-      color: white;
-      border: 2px solid #2e6f40;
-      border-radius: 6px;
-      padding: 8px 12px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-    .showcase-btn:hover {
-      background-color: #2e6f40;
-    }
-    .showcase-display {
-      background: white;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      padding: 15px;
-      color: #333;
-    }
-    .showcase-resort-name {
-      color: #1b365d;
-      margin-top: 0;
-    }
-  </style>
-
-  <!-- HTML markup for mountain explorer interface -->
-  <div class="showcase-title">Inland NW Mountain Resort Explorer</div>
-  <div class="showcase-buttons">
-    <button class="showcase-btn" onclick="showResort('schweitzer')">Schweitzer</button>
-    <button class="showcase-btn" onclick="showResort('spokane')">Mt. Spokane</button>
-    <button class="showcase-btn" onclick="showResort('fortynine')">49 Degrees North</button>
-  </div>
-  <div class="showcase-display" id="resort-info">
-    <h3 class="showcase-resort-name">Select a resort above to view details</h3>
-    <p>Click any mountain button to explore vertical drop, skiable acres, drive time, and fun facts!</p>
-  </div>
-
-  <!-- JavaScript logic to toggle resort details -->
-  <script>
-    function showResort(name) {
-      var info = document.getElementById('resort-info');
-      if (name === 'schweitzer') {
-        info.innerHTML = '<h3 class="showcase-resort-name">Schweitzer Mountain Resort</h3>' +
-          '<p><strong>Vertical Drop:</strong> 2,400 ft</p>' +
-          '<p><strong>Skiable Acres:</strong> 2,900 acres</p>' +
-          '<p><strong>Drive Time from Spokane:</strong> ~1.5 hours (Sandpoint, ID)</p>' +
-          '<p><strong>Fun Fact:</strong> It is the largest ski resort in Idaho and Washington!</p>';
-      } else if (name === 'spokane') {
-        info.innerHTML = '<h3 class="showcase-resort-name">Mt. Spokane Ski &amp; Snowboard Park</h3>' +
-          '<p><strong>Vertical Drop:</strong> 2,000 ft</p>' +
-          '<p><strong>Skiable Acres:</strong> 1,708 acres</p>' +
-          '<p><strong>Drive Time from Spokane:</strong> ~45 minutes</p>' +
-          '<p><strong>Fun Fact:</strong> Operated as a non-profit and offers night skiing 5 nights a week!</p>';
-      } else if (name === 'fortynine') {
-        info.innerHTML = '<h3 class="showcase-resort-name">49 Degrees North Mountain Resort</h3>' +
-          '<p><strong>Vertical Drop:</strong> 1,850 ft</p>' +
-          '<p><strong>Skiable Acres:</strong> 2,325 acres</p>' +
-          '<p><strong>Drive Time from Spokane:</strong> ~1 hour 15 mins (Chewelah, WA)</p>' +
-          '<p><strong>Fun Fact:</strong> Home to Washington\'s longest high-speed quad chairlift!</p>';
-      }
-    }
-  </script>
-</div>
-
-<p>
-  Visit <a href="https://www.gonzaga.edu">Gonzaga University</a> for more regional information.
-</p>
-<p>
-  Contact author: <a href="mailto:cmohlenhoff@zagmail.gonzaga.edu">Email me</a>
-</p>
-
-<footer>Built by Christian Mohlenhoff &middot; BMIS 235</footer>
-
+  <h1>Inland Northwest Winter Slopes</h1>
+  
+  <p>The Inland Northwest is home to some of the best skiing and snowboarding in the region. Whether you're looking for deep powder, well-groomed trails, or family-friendly slopes, nearby resorts offer great winter adventures for all skill levels.</p>
+  
+  <p>Explore three popular winter destinations in the area:</p>
+  
+  <ul>
+    <li><a href="schweitzer.html">Schweitzer Mountain Resort</a></li>
+    <li><a href="spokane.html">Mt. Spokane Ski & Snowboard Park</a></li>
+    <li><a href="fortynine.html">49 Degrees North Mountain Resort</a></li>
+  </ul>
+  
 </body>
 </html>
