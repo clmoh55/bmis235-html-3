@@ -1,346 +1,342 @@
 <!DOCTYPE html>
 <!--
-  Author: Christian Mohlenhoff
-  GU username: cmohlenhoff
-  Course: BMIS 235 - HTML-3
+   Author: Christian Mohlenhoff
+   GU username: cmohlenhoff
+   Course: BMIS 235 - HTML-3
 -->
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="author" content="Christian Mohlenhoff">
-  <title>Inland Northwest Winter Slopes - Neon 80s PNW Shred</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8">
+    <meta name="author" content="Christian Mohlenhoff">
+    <title>Inland Northwest Winter Slopes - Neon 80s PNW Shred</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <nav>
-  <a href="index.html"><img src="img/home.png" alt="Home"></a>
-  <a href="schweitzer.html"><img src="img/schweitzer.png" alt="Schweitzer"></a>
-  <a href="spokane.html"><img src="img/mtspokane.png" alt="Mt. Spokane"></a>
-  <a href="fortynine.html"><img src="img/49degrees.png" alt="49 Degrees"></a>
+  <a href="index.html"><img src="img/home.png" alt="Base Lodge"></a>
+  <a href="schweitzer.html"><img src="img/schweitzer.png" alt="Schweitzer Bowls"></a>
+  <a href="spokane.html"><img src="img/mtspokane.png" alt="Spokane Nights"></a>
+  <a href="fortynine.html"><img src="img/49degrees.png" alt="49 North Glades"></a>
 </nav>
 
 <h1>Inland Northwest Winter Slopes</h1>
 
-<!-- Part 7 Showcase: Interactive 80s Arcade Ski Mini-Game -->
+<div class="pnw-banner-container" style="text-align: center; margin: 15px 0;">
+  <svg viewBox="0 0 1000 220" width="100%" height="auto" style="max-width:1000px; border-radius:12px; border:2px solid #00f5d4; box-shadow: 0 0 15px rgba(0, 245, 212, 0.4); background:#0b192c;">
+    <defs>
+      <linearGradient id="horizonGlow" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#0f172a" />
+        <stop offset="55%" stop-color="#1e1b4b" />
+        <stop offset="75%" stop-color="#ff2a85" stop-opacity="0.8" />
+        <stop offset="85%" stop-color="#00f5d4" stop-opacity="0.9" />
+        <stop offset="100%" stop-color="#0b192c" />
+      </linearGradient>
+      <linearGradient id="mountainGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#38bdf8" />
+        <stop offset="40%" stop-color="#1e293b" />
+        <stop offset="100%" stop-color="#0f172a" />
+      </linearGradient>
+      <linearGradient id="mistGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#ffffff" stop-opacity="0" />
+        <stop offset="30%" stop-color="#e0f2fe" stop-opacity="0.4" />
+        <stop offset="70%" stop-color="#f0f9ff" stop-opacity="0.5" />
+        <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+      </linearGradient>
+      <style>
+        .cloud-layer-1 { animation: drift1 22s linear infinite; }
+        .cloud-layer-2 { animation: drift2 35s linear infinite; }
+        @keyframes drift1 { 0% { transform: translateX(-200px); } 100% { transform: translateX(1000px); } }
+        @keyframes drift2 { 0% { transform: translateX(-400px); } 100% { transform: translateX(1000px); } }
+      </style>
+    </defs>
+    <rect width="1000" height="220" fill="url(#horizonGlow)" />
+    <polygon points="0,180 120,80 220,130 350,50 480,140 600,40 750,120 880,60 1000,160 1000,220 0,220" fill="#1e293b" opacity="0.9" />
+    <polygon points="120,80 145,105 100,105" fill="#f8fafc" opacity="0.8" />
+    <polygon points="350,50 380,85 320,85" fill="#f8fafc" opacity="0.9" />
+    <polygon points="600,40 635,80 570,80" fill="#f8fafc" opacity="0.9" />
+    <polygon points="880,60 910,95 850,95" fill="#f8fafc" opacity="0.8" />
+    <polygon points="0,220 80,110 200,170 310,90 440,180 560,75 700,150 820,85 950,170 1000,130 1000,220" fill="url(#mountainGrad)" stroke="#00f5d4" stroke-width="1.5" />
+    <polyline points="0,220 80,110 200,170 310,90 440,180 560,75 700,150 820,85 950,170 1000,130" fill="none" stroke="#ff2a85" stroke-width="2.5" opacity="0.85" />
+    <g class="cloud-layer-2">
+      <ellipse cx="200" cy="130" rx="180" ry="25" fill="url(#mistGrad)" />
+      <ellipse cx="600" cy="110" rx="220" ry="30" fill="url(#mistGrad)" />
+    </g>
+    <g fill="#042f2e" stroke="#0f172a" stroke-width="0.5">
+      <polygon points="20,220 30,170 40,220" />
+      <polygon points="35,220 45,155 55,220" />
+      <polygon points="50,220 62,165 74,220" />
+      <polygon points="68,220 78,175 88,220" />
+      <polygon points="170,220 182,150 194,220" />
+      <polygon points="188,220 200,135 212,220" />
+      <polygon points="205,220 218,145 231,220" />
+      <polygon points="225,220 238,160 250,220" />
+      <polygon points="380,220 395,140 410,220" />
+      <polygon points="402,220 418,125 434,220" />
+      <polygon points="428,220 442,145 456,220" />
+      <polygon points="450,220 465,130 480,220" />
+      <polygon points="475,220 490,150 505,220" />
+      <polygon points="640,220 655,135 670,220" />
+      <polygon points="662,220 678,120 694,220" />
+      <polygon points="688,220 702,140 716,220" />
+      <polygon points="710,220 725,155 740,220" />
+      <polygon points="780,220 795,145 810,220" />
+      <polygon points="802,220 818,130 834,220" />
+      <polygon points="828,220 842,150 856,220" />
+      <polygon points="910,220 925,160 940,220" />
+      <polygon points="935,220 950,140 965,220" />
+    </g>
+    <g fill="#022c22">
+      <path d="M 110,220 L 125,130 L 120,135 L 125,115 L 122,118 L 125,100 L 128,118 L 125,135 L 130,130 L 140,220 Z" />
+      <path d="M 290,220 L 305,120 L 300,126 L 305,105 L 302,109 L 305,90 L 308,109 L 305,126 L 310,120 L 320,220 Z" />
+      <path d="M 530,220 L 545,110 L 540,118 L 545,95 L 541,100 L 545,80 L 549,100 L 545,95 L 550,118 L 560,220 Z" />
+      <path d="M 750,220 L 765,125 L 760,132 L 765,108 L 761,113 L 765,92 L 769,113 L 765,108 L 770,132 L 780,220 Z" />
+    </g>
+    <g class="cloud-layer-1">
+      <ellipse cx="100" cy="175" rx="150" ry="20" fill="url(#mistGrad)" />
+      <ellipse cx="450" cy="165" rx="200" ry="24" fill="url(#mistGrad)" />
+      <ellipse cx="800" cy="170" rx="170" ry="22" fill="url(#mistGrad)" />
+    </g>
+  </svg>
+</div>
+
 <div class="showcase">
-  <!-- CSS Section: All rules scoped to .showcase -->
-  <style>
-    .showcase {
-      background: rgba(16, 42, 38, 0.95);
-      border: 3px solid #00f5d4;
-      border-radius: 12px;
-      padding: 12px;
-      box-shadow: 0 0 20px rgba(0, 245, 212, 0.4), 4px 4px 0px #ff2a85;
-      font-family: 'Trebuchet MS', sans-serif;
-      color: #e6f4f1;
-      max-height: 495px;
-      box-sizing: border-box;
-      overflow: hidden;
-    }
-    .showcase h2 {
-      margin: 0 0 8px 0;
-      font-size: 1.1rem;
-      color: #fee440;
-      text-align: center;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      text-shadow: 0 0 8px #fee440, 2px 2px 0px #ff2a85;
-    }
-    .showcase canvas {
-      display: block;
-      width: 100%;
-      height: 250px;
-      background: #0b192c;
-      border: 2px solid #00f5d4;
-      border-radius: 8px;
-      box-sizing: border-box;
-    }
-    .showcase .arcade-controls {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 8px;
-      gap: 6px;
-    }
-    .showcase button {
-      background: #102a26;
-      color: #00f5d4;
-      border: 2px solid #00f5d4;
-      border-radius: 6px;
-      padding: 6px 10px;
-      font-weight: bold;
-      font-family: 'Trebuchet MS', sans-serif;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      font-size: 0.8rem;
-    }
-    .showcase button:hover {
-      background: #ff2a85;
-      color: #fff;
-      box-shadow: 0 0 10px #ff2a85;
-    }
-    .showcase .warp-btn {
-      background: #ff2a85;
-      color: #fff;
-      border-color: #fee440;
-      box-shadow: 0 0 10px #ff2a85;
-      text-decoration: none;
-      display: inline-block;
-      padding: 6px 12px;
-      border-radius: 6px;
-      font-weight: bold;
-      font-size: 0.85rem;
-    }
-    .showcase .warp-btn:hover {
-      background: #00f5d4;
-      color: #0b192c;
-      box-shadow: 0 0 15px #00f5d4;
-    }
-    .showcase .stats-panel {
-      margin-top: 6px;
-      background: rgba(11, 25, 44, 0.8);
-      border: 1px solid #00f5d4;
-      border-radius: 6px;
-      padding: 6px 10px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.8rem;
-    }
-  </style>
-
-  <!-- HTML Section: Arcade Header, Canvas & Control Panel -->
-  <h2>⚡ 80s PNW Shred & Select Arcade ⚡</h2>
-  <canvas id="skiCanvas" width="700" height="250"></canvas>
-  <div class="arcade-controls">
-    <div>
-      <button onclick="movePlayer(-15)">◄ LEFT</button>
-      <button onclick="movePlayer(15)">RIGHT ►</button>
-      <button onclick="triggerJump()">🚀 JUMP / FLIP</button>
-    </div>
-    <div id="warpArea">
-      <span style="font-size: 0.75rem; color:#fee440;">Ski into a gate or select:</span>
-    </div>
+  <div class="arcade-bar">
+    <span class="arcade-title">⛷️ RETRO SKI SHRED 80s Arcade</span>
+    <span id="scoreDisplay">SCORE: 0</span>
+    <span id="speedDisplay">SPEED: 35 MPH</span>
+    <label style="margin-left:15px; font-size:0.85rem; color:#00f5d4; cursor:pointer;">
+      <input type="checkbox" id="freeShredToggle" style="vertical-align:middle; margin-right:4px;"> Free Shred Mode (Stay on Slope)
+    </label>
   </div>
-  <div class="stats-panel" id="resortStats">
-    <span><b>Select Mountain:</b> Use Arrow Keys/A-D/Buttons to slalom into Schweitzer, Mt. Spokane, or 49° North!</span>
-    <div>
-      <button onclick="selectResort('schweitzer')">Schweitzer</button>
-      <button onclick="selectResort('spokane')">Mt. Spokane</button>
-      <button onclick="selectResort('fortynine')">49° North</button>
-    </div>
+  <canvas id="skiCanvas" width="700" height="350"></canvas>
+  <p class="ski-instructions">Steer with Left/Right Arrow keys or A/D. Pass through glowing gates (SCHWEITZER BOWLS, SPOKANE NIGHTS, 49° NORTH GLADES) or click/tap a gate to carve directly into that mountain portal!</p>
+</div>
+
+<div class="action-grid">
+  <div>
+    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 500' width='100%' height='100%'><defs><linearGradient id='sky' x1='0' y1='0' x2='0' y2='1'><stop offset='0%' stop-color='%230f172a'/><stop offset='60%' stop-color='%231e3a8a'/><stop offset='100%' stop-color='%2338bdf8'/></linearGradient><linearGradient id='snow' x1='0' y1='0' x2='0' y2='1'><stop offset='0%' stop-color='%23ffffff'/><stop offset='100%' stop-color='%23e2e8f0'/></linearGradient></defs><rect width='800' height='500' fill='url(%23sky)'/><polygon points='0,500 150,220 300,380 450,160 650,420 800,200 800,500' fill='%231e293b'/><polygon points='150,220 200,280 120,280' fill='url(%23snow)'/><polygon points='450,160 510,240 400,240' fill='url(%23snow)'/><polygon points='800,200 800,280 730,280' fill='url(%23snow)'/><polygon points='0,500 0,350 250,500' fill='url(%23snow)'/><polygon points='200,500 500,320 800,500' fill='url(%23snow)'/><g fill='%23064e3b'><polygon points='80,480 95,440 110,480'/><polygon points='140,490 155,430 170,490'/><polygon points='600,470 615,410 630,470'/><polygon points='680,485 695,425 710,485'/></g><text x='400' y='250' font-family='Arial, sans-serif' font-weight='bold' font-size='28' fill='%23ffffff' text-anchor='middle' opacity='0.95'>Selkirk Deep Powder Bowls &amp; Alpine Vistas</text></svg>" alt="Selkirk Deep Powder Bowls &amp; Alpine Vistas" class="action-img">
+    <p><b>Selkirk Deep Powder Bowls &amp; Alpine Vistas:</b> Sweeping views of Schweitzer &amp; Lake Pend Oreille powder bowls.</p>
   </div>
+  <div>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Night_Skiing_at_Mt._Spokane.jpg" alt="Night Skiing" class="action-img">
+    <p><b>Night Shredding:</b> Lighted night runs overlooking the Spokane valley lights.</p>
+  </div>
+  <div>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/37/Tree_Skiing_at_49_Degrees_North.jpg" alt="Glade Skiing" class="action-img">
+    <p><b>Deep Glades:</b> Tree skiing and powder stashes at 49 Degrees North.</p>
+  </div>
+</div>
 
-  <!-- JavaScript Section: Mini-game engine & resort gate hit detection -->
-  <script>
-    (function() {
-      const canvas = document.getElementById('skiCanvas');
-      const ctx = canvas.getContext('2d');
+<script>
+(function generateNavButtons() {
+  const buttonConfigs = [
+    { href: 'index.html', label: 'BASE LODGE' },
+    { href: 'schweitzer.html', label: 'SCHWEITZER BOWLS' },
+    { href: 'spokane.html', label: 'SPOKANE NIGHTS' },
+    { href: 'fortynine.html', label: '49° NORTH GLADES' }
+  ];
 
-      let skier = { x: 350, y: 70, dx: 0, flipAngle: 0, isJumping: false, jumpHeight: 0, trickText: '' };
-      let speed = 2.5;
-      let score = 0;
-      let snow = Array.from({length: 40}, () => ({ x: Math.random()*700, y: Math.random()*250, r: Math.random()*2.5+1 }));
-      let trees = Array.from({length: 8}, () => ({ x: Math.random()*660+20, y: Math.random()*200+50 }));
-      
-      const gates = [
-        { name: 'SCHWEITZER', x: 120, y: 200, color: '#00f5d4', page: 'schweitzer.html', drop: '2,400 FT', acres: '2,900', gnar: '9.8/10' },
-        { name: 'MT. SPOKANE', x: 350, y: 200, color: '#ff2a85', page: 'spokane.html', drop: '2,000 FT', acres: '1,704', gnar: '9.2/10' },
-        { name: '49 DEGREES N', x: 580, y: 200, color: '#fee440', page: 'fortynine.html', drop: '1,851 FT', acres: '2,325', gnar: '9.5/10' }
-      ];
+  const navImgs = document.querySelectorAll('nav img');
+  navImgs.forEach((img, index) => {
+    const config = buttonConfigs[index];
+    if (!config) return;
 
-      window.movePlayer = function(dir) {
-        skier.x = Math.max(40, Math.min(660, skier.x + dir));
-      };
+    const canvas = document.createElement('canvas');
+    canvas.width = 210;
+    canvas.height = 50;
+    const ctx = canvas.getContext('2d');
 
-      window.triggerJump = function() {
-        if (!skier.isJumping) {
-          skier.isJumping = true;
-          skier.trickText = 'GNARLY 360 BACKFLIP! +500 PTS';
-          score += 500;
-          setTimeout(() => { skier.isJumping = false; skier.trickText = ''; }, 800);
-        }
-      };
+    const grad = ctx.createLinearGradient(0, 0, 0, 50);
+    grad.addColorStop(0, '#1f2937');
+    grad.addColorStop(0.5, '#111827');
+    grad.addColorStop(1, '#0f172a');
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, 210, 50);
 
-      window.selectResort = function(key) {
-        const target = gates.find(g => g.page.includes(key));
-        if (target) activateWarp(target);
-      };
+    ctx.lineWidth = 2;
+    ctx.strokeStyle = '#38bdf8';
+    ctx.beginPath();
+    ctx.moveTo(0, 50); ctx.lineTo(0, 0); ctx.lineTo(210, 0);
+    ctx.stroke();
 
-      function activateWarp(g) {
-        document.getElementById('warpArea').innerHTML = `<a class="warp-btn" href="${g.page}">WARP TO ${g.name} PAGE >></a>`;
-        document.getElementById('resortStats').innerHTML = `<span><b>${g.name}:</b> Drop: ${g.drop} | Acres: ${g.acres} | Gnar: ${g.gnar}</span> <a class="warp-btn" href="${g.page}">GO NOW!</a>`;
+    ctx.strokeStyle = '#ec4899';
+    ctx.beginPath();
+    ctx.moveTo(210, 0); ctx.lineTo(210, 50); ctx.lineTo(0, 50);
+    ctx.stroke();
+
+    ctx.strokeStyle = '#334155';
+    ctx.strokeRect(3, 3, 204, 44);
+
+    ctx.strokeStyle = 'rgba(56, 189, 248, 0.12)';
+    ctx.lineWidth = 1;
+    for (let x = 15; x < 210; x += 15) {
+      ctx.beginPath(); ctx.moveTo(x, 4); ctx.lineTo(x, 46); ctx.stroke();
+    }
+
+    ctx.fillStyle = '#ffffff';
+    ctx.shadowColor = '#38bdf8';
+    ctx.shadowBlur = 4;
+    ctx.font = '900 13px "Segoe UI", Arial, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(config.label, 105, 25);
+
+    img.src = canvas.toDataURL('image/png');
+    img.width = 210;
+    img.height = 50;
+  });
+})();
+
+(function initSkiGame() {
+  const canvas = document.getElementById('skiCanvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const freeShredToggle = document.getElementById('freeShredToggle');
+  const scoreDisplay = document.getElementById('scoreDisplay');
+  const speedDisplay = document.getElementById('speedDisplay');
+
+  let score = 0;
+  let speed = 35;
+  let skierX = canvas.width / 2;
+  let skierY = 60;
+  let keyState = {};
+  let portalTriggered = false;
+  let portalText = '';
+  let portalColor = '#00f5d4';
+
+  const gates = [
+    { name: 'SCHWEITZER BOWLS', url: 'schweitzer.html', x: 120, y: 240, width: 140, color: '#38bdf8' },
+    { name: 'SPOKANE NIGHTS', url: 'spokane.html', x: 350, y: 240, width: 140, color: '#ff2a85' },
+    { name: '49° NORTH GLADES', url: 'fortynine.html', x: 580, y: 240, width: 140, color: '#00f5d4' }
+  ];
+
+  window.addEventListener('keydown', e => { keyState[e.key] = true; });
+  window.addEventListener('keyup', e => { keyState[e.key] = false; });
+
+  canvas.addEventListener('click', e => {
+    const rect = canvas.getBoundingClientRect();
+    const clickX = (e.clientX - rect.left) * (canvas.width / rect.width);
+    const clickY = (e.clientY - rect.top) * (canvas.height / rect.height);
+
+    gates.forEach(gate => {
+      if (Math.abs(clickX - gate.x) < 80 && Math.abs(clickY - gate.y) < 60) {
+        triggerGate(gate);
       }
+    });
+  });
 
-      window.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowLeft' || e.key === 'a' || e.key === 'A') movePlayer(-20);
-        if (e.key === 'ArrowRight' || e.key === 'd' || e.key === 'D') movePlayer(20);
-        if (e.key === ' ' || e.key === 'ArrowUp') triggerJump();
-      });
+  function triggerGate(gate) {
+    if (portalTriggered) return;
+    if (freeShredToggle && freeShredToggle.checked) {
+      score += 500;
+      if (scoreDisplay) scoreDisplay.textContent = 'SCORE: ' + score + ' (SHREDDED ' + gate.name + '!)';
+      return;
+    }
+    portalTriggered = true;
+    portalText = '⚡ DROPPING IN TO ' + gate.name + '! ⚡';
+    portalColor = gate.color;
+    setTimeout(() => {
+      window.location.href = gate.url;
+    }, 800);
+  }
 
-      function draw() {
-        let grad = ctx.createLinearGradient(0, 0, 0, 250);
-        grad.addColorStop(0, '#0b192c');
-        grad.addColorStop(0.4, '#102a26');
-        grad.addColorStop(1, '#162636');
-        ctx.fillStyle = grad;
-        ctx.fillRect(0, 0, 700, 250);
+  function update() {
+    if (keyState['ArrowLeft'] || keyState['a'] || keyState['A']) skierX -= 5;
+    if (keyState['ArrowRight'] || keyState['d'] || keyState['D']) skierX += 5;
 
-        ctx.strokeStyle = 'rgba(0, 245, 212, 0.15)';
-        ctx.lineWidth = 1;
-        for (let x = 0; x < 700; x += 40) {
-          ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, 250); ctx.stroke();
-        }
+    if (skierX < 30) skierX = 30;
+    if (skierX > canvas.width - 30) skierX = canvas.width - 30;
 
-        ctx.fillStyle = '#ffffff';
-        snow.forEach(s => {
-          s.y += speed * 0.5;
-          if (s.y > 250) s.y = 0;
-          ctx.beginPath(); ctx.arc(s.x, s.y, s.r, 0, Math.PI*2); ctx.fill();
-        });
+    score += 1;
+    if (scoreDisplay && !portalTriggered) scoreDisplay.textContent = 'SCORE: ' + score;
 
-        trees.forEach(t => {
-          t.y -= speed * 0.8;
-          if (t.y < 20) { t.y = 240; t.x = Math.random()*660 + 20; }
-          ctx.fillStyle = '#0f382c';
-          ctx.beginPath();
-          ctx.moveTo(t.x, t.y - 15);
-          ctx.lineTo(t.x - 10, t.y + 10);
-          ctx.lineTo(t.x + 10, t.y + 10);
-          ctx.fill();
-        });
+    gates.forEach(gate => {
+      gate.y -= 2;
+      if (gate.y < -40) gate.y = canvas.height + 40;
 
-        gates.forEach(g => {
-          ctx.strokeStyle = g.color;
-          ctx.lineWidth = 4;
-          ctx.shadowColor = g.color;
-          ctx.shadowBlur = 10;
-          ctx.strokeRect(g.x - 35, g.y - 25, 70, 35);
-          ctx.shadowBlur = 0;
-
-          ctx.fillStyle = '#ffffff';
-          ctx.font = '9px "Trebuchet MS", sans-serif';
-          ctx.textAlign = 'center';
-          ctx.fillText(g.name, g.x, g.y - 5);
-
-          if (Math.abs(skier.x - g.x) < 35 && Math.abs(skier.y + (skier.isJumping ? -20 : 0) - g.y) < 25) {
-            activateWarp(g);
-          }
-        });
-
-        ctx.save();
-        let drawY = skier.y;
-        if (skier.isJumping) {
-          drawY -= 25;
-          skier.flipAngle += 0.2;
-        } else {
-          skier.flipAngle = 0;
-        }
-
-        ctx.translate(skier.x, drawY);
-        ctx.rotate(skier.flipAngle);
-
-        ctx.strokeStyle = '#39ff14';
-        ctx.lineWidth = 3;
-        ctx.beginPath();
-        ctx.arc(0, -12, 5, 0, Math.PI * 2);
-        ctx.moveTo(0, -7); ctx.lineTo(0, 8);
-        ctx.moveTo(0, -2); ctx.lineTo(-8, 3);
-        ctx.moveTo(0, -2); ctx.lineTo(8, 3);
-        ctx.moveTo(0, 8); ctx.lineTo(-6, 18);
-        ctx.moveTo(0, 8); ctx.lineTo(6, 18);
-        ctx.stroke();
-
-        ctx.strokeStyle = '#ff2a85';
-        ctx.lineWidth = 3;
-        ctx.beginPath();
-        ctx.moveTo(-12, 20); ctx.lineTo(-2, 20);
-        ctx.moveTo(2, 20); ctx.lineTo(12, 20);
-        ctx.stroke();
-
-        ctx.restore();
-
-        if (skier.trickText) {
-          ctx.fillStyle = '#fee440';
-          ctx.font = 'bold 12px "Trebuchet MS", sans-serif';
-          ctx.textAlign = 'center';
-          ctx.fillText(skier.trickText, skier.x, skier.y - 45);
-        }
-
-        requestAnimationFrame(draw);
+      if (!portalTriggered && Math.abs(skierX - gate.x) < 50 && Math.abs(skierY - gate.y) < 30) {
+        triggerGate(gate);
       }
+    });
+  }
 
-      draw();
-    })();
-  </script>
-</div>
+  function draw() {
+    ctx.fillStyle = '#0b192c';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-<!-- Mountain & Action Visuals Section -->
-<div class="retro-card">
-  <h2>🏔️ Inland Northwest Powder Showcase 🏔️</h2>
-  <p>Experience the legendary powder, massive vertical drops, and night skiing sessions across the Inland Pacific Northwest.</p>
+    ctx.strokeStyle = 'rgba(56, 189, 248, 0.15)';
+    ctx.lineWidth = 1;
+    for (let x = 0; x < canvas.width; x += 40) {
+      ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, canvas.height); ctx.stroke();
+    }
+    for (let y = 0; y < canvas.height; y += 40) {
+      ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(canvas.width, y); ctx.stroke();
+    }
 
-  <div style="display:inline-block; background:#ff2a85; color:#fff; padding:6px 12px; border-radius:20px; font-weight:bold; font-size:0.85rem; margin-bottom:15px; box-shadow: 0 0 10px #ff2a85;">
-    🔴 LIVE 80s SNOWBOARD BACKFLIP CAM
-  </div>
+    gates.forEach(gate => {
+      ctx.save();
+      ctx.shadowColor = gate.color;
+      ctx.shadowBlur = 12;
 
-  <div class="media-grid">
-    <div>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/e/ea/Freestyle_skiing_jump2.jpg" alt="Freestyle Ski Jump Action" class="action-img">
-      <p><b>Big Air Freestyle:</b> Launching off kicker ramps in the Selkirks.</p>
-    </div>
-    <div>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/Snowboarder_in_halfpipe.jpg" alt="Snowboarder Halfpipe Shred" class="action-img">
-      <p><b>Halfpipe & Glades:</b> High-energy snowboarding action.</p>
-    </div>
-    <div>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/8/86/Schweitzer_Mountain_Village.JPG" alt="Schweitzer Mountain Village" class="action-img">
-      <p><b>Alpine Base Village:</b> Sweeping views of Schweitzer & Lake Pend Oreille.</p>
-    </div>
-  </div>
-</div>
+      ctx.fillStyle = gate.color;
+      ctx.fillRect(gate.x - 65, gate.y - 30, 8, 50);
+      ctx.fillRect(gate.x + 57, gate.y - 30, 8, 50);
 
-<div class="retro-card">
-  <h2>Resort Comparison Overview</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Resort Name</th>
-        <th>Vertical Drop</th>
-        <th>Skiable Acres</th>
-        <th>Key Feature</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a href="schweitzer.html">Schweitzer</a></td>
-        <td>2,900 ft</td>
-        <td>2,900 acres</td>
-        <td>Lake Pend Oreille views & bowl skiing</td>
-      </tr>
-      <tr>
-        <td><a href="spokane.html">Mt. Spokane</a></td>
-        <td>2,000 ft</td>
-        <td>1,704 acres</td>
-        <td>16 illuminated night skiing runs & Lodge 2</td>
-      </tr>
-      <tr>
-        <td><a href="fortynine.html">49 Degrees North</a></td>
-        <td>1,851 ft</td>
-        <td>2,325 acres</td>
-        <td>Chewelah Peak glades & high-speed quad</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+      ctx.fillStyle = 'rgba(15, 23, 42, 0.85)';
+      ctx.strokeStyle = gate.color;
+      ctx.lineWidth = 2;
+      ctx.fillRect(gate.x - 60, gate.y - 30, 120, 26);
+      ctx.strokeRect(gate.x - 60, gate.y - 30, 120, 26);
 
-<div class="retro-card">
-  <h2>Learn More & Contact</h2>
-  <p>Interested in learning more about PNW winter sports or Gonzaga academic programs? Visit <a href="https://www.gonzaga.edu" target="_blank">Gonzaga University</a> or email <a href="mailto:cmohlenhoff@zagmail.gonzaga.edu">cmohlenhoff@zagmail.gonzaga.edu</a>.</p>
-</div>
+      ctx.fillStyle = '#ffffff';
+      ctx.font = 'bold 10px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(gate.name, gate.x, gate.y - 17);
+      ctx.restore();
+    });
 
-<footer>Built by Christian Mohlenhoff &middot; BMIS 235</footer>
+    ctx.save();
+    ctx.translate(skierX, skierY);
+    ctx.shadowColor = '#00f5d4';
+    ctx.shadowBlur = 10;
+    ctx.strokeStyle = '#ff2a85';
+    ctx.lineWidth = 3;
+    ctx.beginPath();
+    ctx.moveTo(-12, -15); ctx.lineTo(-8, 15);
+    ctx.moveTo(12, -15); ctx.lineTo(8, 15);
+    ctx.stroke();
+    ctx.fillStyle = '#00f5d4';
+    ctx.beginPath(); ctx.arc(0, 0, 9, 0, Math.PI * 2); ctx.fill();
+    ctx.fillStyle = '#ffffff';
+    ctx.beginPath(); ctx.arc(0, -3, 5, 0, Math.PI * 2); ctx.fill();
+    ctx.restore();
+
+    if (portalTriggered) {
+      ctx.fillStyle = 'rgba(11, 25, 44, 0.8)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.save();
+      ctx.shadowColor = portalColor;
+      ctx.shadowBlur = 20;
+      ctx.fillStyle = '#ffffff';
+      ctx.font = '900 22px "Segoe UI", Arial, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(portalText, canvas.width / 2, canvas.height / 2);
+      ctx.restore();
+    }
+  }
+
+  function loop() {
+    update();
+    draw();
+    requestAnimationFrame(loop);
+  }
+  loop();
+})();
+</script>
 
 </body>
 </html>
