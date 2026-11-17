@@ -1,105 +1,138 @@
 <!DOCTYPE html>
 <!--
-   Author: Christian Mohlenhoff
-   GU username: cmohlenhoff
-   Course: BMIS 235 - HTML-3
+  Author: Christian Mohlenhoff
+  GU username: cmohlenhoff
+  Course: BMIS 235 - HTML-3
 -->
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="author" content="Christian Mohlenhoff">
-    <title>Schweitzer Mountain Resort - 80s PNW Shred</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8">
+  <meta name="author" content="Christian Mohlenhoff">
+  <title>Schweitzer Bowls - Inland Northwest Winter Slopes</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <nav>
-  <a href="index.html"><img src="img/home.png" alt="Base Lodge"></a>
-  <a href="schweitzer.html"><img src="img/schweitzer.png" alt="Schweitzer Bowls"></a>
-  <a href="spokane.html"><img src="img/mtspokane.png" alt="Spokane Nights"></a>
-  <a href="fortynine.html"><img src="img/49degrees.png" alt="49 North Glades"></a>
+  <a href="index.html"><img src="img/home.png" alt="Base Lodge" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/e/ea/Freestyle_skiing_jump2.jpg';"></a>
+  <a href="schweitzer.html"><img src="img/schweitzer.png" alt="Schweitzer Bowls" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/e/ea/Freestyle_skiing_jump2.jpg';"></a>
+  <a href="spokane.html"><img src="img/mtspokane.png" alt="Spokane Nights" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/6/69/Snowboarder_in_halfpipe.jpg';"></a>
+  <a href="fortynine.html"><img src="img/49degrees.png" alt="49 North Glades" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/e/ea/Freestyle_skiing_jump2.jpg';"></a>
 </nav>
 
 <h1>Schweitzer Mountain Resort</h1>
+<p style="text-align:center; color:#00f0ff; font-weight:bold;">Sandpoint, Idaho &middot; Selkirk Mountains &middot; Lake Pend Oreille Views</p>
 
-<div class="resort-detail">
-  <div class="mountain-grid">
-    <div>
-      <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 500' width='100%' height='100%'><defs><linearGradient id='sky' x1='0' y1='0' x2='0' y2='1'><stop offset='0%' stop-color='%230f172a'/><stop offset='60%' stop-color='%231e3a8a'/><stop offset='100%' stop-color='%2338bdf8'/></linearGradient><linearGradient id='snow' x1='0' y1='0' x2='0' y2='1'><stop offset='0%' stop-color='%23ffffff'/><stop offset='100%' stop-color='%23e2e8f0'/></linearGradient></defs><rect width='800' height='500' fill='url(%23sky)'/><polygon points='0,500 150,220 300,380 450,160 650,420 800,200 800,500' fill='%231e293b'/><polygon points='150,220 200,280 120,280' fill='url(%23snow)'/><polygon points='450,160 510,240 400,240' fill='url(%23snow)'/><polygon points='800,200 800,280 730,280' fill='url(%23snow)'/><polygon points='0,500 0,350 250,500' fill='url(%23snow)'/><polygon points='200,500 500,320 800,500' fill='url(%23snow)'/><g fill='%23064e3b'><polygon points='80,480 95,440 110,480'/><polygon points='140,490 155,430 170,490'/><polygon points='600,470 615,410 630,470'/><polygon points='680,485 695,425 710,485'/></g><text x='400' y='250' font-family='Arial, sans-serif' font-weight='bold' font-size='28' fill='%23ffffff' text-anchor='middle' opacity='0.95'>Selkirk Deep Powder Bowls &amp; Alpine Vistas</text></svg>" alt="Selkirk Deep Powder Bowls &amp; Alpine Vistas" class="mountain-img">
-      <p><b>Selkirk Deep Powder Bowls &amp; Alpine Vistas:</b> Breathtaking alpine views.</p>
-    </div>
-    <div class="stats-box">
-      <h2>Resort Stats</h2>
-      <ul>
-        <li><b>Vertical Drop:</b> 2,400 ft</li>
-        <li><b>Skiable Acres:</b> 2,900 acres</li>
-        <li><b>Lifts:</b> 10</li>
-        <li><b>Average Snowfall:</b> 300 inches</li>
-      </ul>
-    </div>
-  </div>
+<div style="max-width:900px; margin:20px auto; text-align:center;">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/e/ea/Freestyle_skiing_jump2.jpg" alt="Big Air Freestyle Jump at Schweitzer" style="width:100%; max-height:400px; object-fit:cover; border-radius:10px; border:2px solid #ff007f;" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/e/ea/Freestyle_skiing_jump2.jpg';">
 </div>
 
-<script>
-(function generateNavButtons() {
-  const buttonConfigs = [
-    { href: 'index.html', label: 'BASE LODGE' },
-    { href: 'schweitzer.html', label: 'SCHWEITZER BOWLS' },
-    { href: 'spokane.html', label: 'SPOKANE NIGHTS' },
-    { href: 'fortynine.html', label: '49° NORTH GLADES' }
-  ];
+<div style="text-align:center; margin:30px auto; max-width:800px; background:#0d1117; border:3px solid #00f0ff; border-radius:12px; padding:15px; box-shadow:0 0 15px rgba(0,240,255,0.4);">
+  <h2 style="color:#00f0ff; margin-top:0;">🔴 ANIMATED 80s SKI-JUMP LOOP</h2>
+  <canvas id="skiJumpCanvas" width="700" height="250" style="background:#0f172a; border-radius:8px; width:100%; max-width:700px;"></canvas>
+  <script>
+    (function() {
+      const cvs = document.getElementById('skiJumpCanvas');
+      if (!cvs) return;
+      const ctx = cvs.getContext('2d');
+      let t = 0;
+      function render() {
+        t += 0.04;
+        ctx.clearRect(0,0,cvs.width,cvs.height);
+        
+        ctx.fillStyle = '#1e293b';
+        ctx.beginPath();
+        ctx.moveTo(0, 100);
+        ctx.lineTo(250, 180);
+        ctx.lineTo(250, 250);
+        ctx.lineTo(0, 250);
+        ctx.fill();
 
-  const navImgs = document.querySelectorAll('nav img');
-  navImgs.forEach((img, index) => {
-    const config = buttonConfigs[index];
-    if (!config) return;
+        ctx.fillStyle = '#ff007f';
+        ctx.beginPath();
+        ctx.moveTo(220, 170);
+        ctx.lineTo(250, 150);
+        ctx.lineTo(250, 180);
+        ctx.fill();
 
-    const canvas = document.createElement('canvas');
-    canvas.width = 210;
-    canvas.height = 50;
-    const ctx = canvas.getContext('2d');
+        ctx.fillStyle = '#334155';
+        ctx.beginPath();
+        ctx.moveTo(400, 200);
+        ctx.lineTo(700, 230);
+        ctx.lineTo(700, 250);
+        ctx.lineTo(400, 250);
+        ctx.fill();
 
-    const grad = ctx.createLinearGradient(0, 0, 0, 50);
-    grad.addColorStop(0, '#1f2937');
-    grad.addColorStop(0.5, '#111827');
-    grad.addColorStop(1, '#0f172a');
-    ctx.fillStyle = grad;
-    ctx.fillRect(0, 0, 210, 50);
+        let phase = (t % 4) / 4;
+        let sx, sy, rot = 0;
+        if (phase < 0.3) {
+          let p = phase / 0.3;
+          sx = p * 250;
+          sy = 100 + p * 50;
+        } else if (phase < 0.75) {
+          let p = (phase - 0.3) / 0.45;
+          sx = 250 + p * 200;
+          sy = 150 - Math.sin(p * Math.PI) * 90;
+          rot = p * Math.PI * 2;
+        } else {
+          let p = (phase - 0.75) / 0.25;
+          sx = 450 + p * 250;
+          sy = 205 + p * 25;
+        }
 
-    ctx.lineWidth = 2;
-    ctx.strokeStyle = '#38bdf8';
-    ctx.beginPath();
-    ctx.moveTo(0, 50); ctx.lineTo(0, 0); ctx.lineTo(210, 0);
-    ctx.stroke();
+        ctx.save();
+        ctx.translate(sx, sy);
+        ctx.rotate(rot);
+        ctx.fillStyle = '#38bdf8';
+        ctx.fillRect(-6, -10, 12, 20);
+        ctx.fillStyle = '#ff007f';
+        ctx.beginPath(); ctx.arc(0, -14, 6, 0, Math.PI*2); ctx.fill();
+        ctx.restore();
 
-    ctx.strokeStyle = '#ec4899';
-    ctx.beginPath();
-    ctx.moveTo(210, 0); ctx.lineTo(210, 50); ctx.lineTo(0, 50);
-    ctx.stroke();
+        ctx.fillStyle = '#39ff14';
+        ctx.font = 'bold 14px monospace';
+        ctx.fillText('SELKIRK BIG AIR LOOP - AIRTIME: 100%', 20, 30);
 
-    ctx.strokeStyle = '#334155';
-    ctx.strokeRect(3, 3, 204, 44);
+        requestAnimationFrame(render);
+      }
+      render();
+    })();
+  </script>
+</div>
 
-    ctx.strokeStyle = 'rgba(56, 189, 248, 0.12)';
-    ctx.lineWidth = 1;
-    for (let x = 15; x < 210; x += 15) {
-      ctx.beginPath(); ctx.moveTo(x, 4); ctx.lineTo(x, 46); ctx.stroke();
-    }
+<div style="text-align:center; margin:30px auto; max-width:800px;">
+  <svg width="100%" height="220" viewBox="0 0 800 220" style="background:linear-gradient(to bottom, #0f172a, #1e3a8a); border-radius:10px; border:2px solid #39ff14;">
+    <polygon points="0,220 150,80 300,220" fill="#334155"/>
+    <polygon points="150,80 180,120 150,220" fill="#1e293b"/>
+    <polygon points="150,80 130,120 170,120" fill="#ffffff"/>
+    <polygon points="250,220 450,40 650,220" fill="#475569"/>
+    <polygon points="450,40 480,90 450,220" fill="#334155"/>
+    <polygon points="450,40 420,90 480,90" fill="#ffffff"/>
+    <path d="M 0 220 C 200 160, 600 160, 800 220 Z" fill="#0284c7" opacity="0.8"/>
+    <text x="400" y="200" fill="#ffffff" font-family="sans-serif" font-weight="bold" font-size="18" text-anchor="middle">Lake Pend Oreille & Selkirk Crest Vista</text>
+  </svg>
+</div>
 
-    ctx.fillStyle = '#ffffff';
-    ctx.shadowColor = '#38bdf8';
-    ctx.shadowBlur = 4;
-    ctx.font = '900 13px "Segoe UI", Arial, sans-serif';
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'middle';
-    ctx.fillText(config.label, 105, 25);
+<div style="max-width:900px; margin:30px auto; color:#fff; background:#1e293b; padding:20px; border-radius:10px; border:1px solid #00f0ff;">
+  <h2 style="text-align:center; color:#00f0ff;">Schweitzer Mountain Detailed Resort Stats</h2>
+  <table style="width:100%; border-collapse:collapse; text-align:left;">
+    <tbody>
+      <tr style="border-bottom:1px solid #334155;"><th style="padding:10px; color:#ff007f;">Top Elevation</th><td style="padding:10px;">6,400 ft</td></tr>
+      <tr style="border-bottom:1px solid #334155;"><th style="padding:10px; color:#ff007f;">Base Elevation</th><td style="padding:10px;">4,000 ft</td></tr>
+      <tr style="border-bottom:1px solid #334155;"><th style="padding:10px; color:#ff007f;">Vertical Drop</th><td style="padding:10px;">2,400 ft</td></tr>
+      <tr style="border-bottom:1px solid #334155;"><th style="padding:10px; color:#ff007f;">Skiable Terrain</th><td style="padding:10px;">2,900 acres</td></tr>
+      <tr style="border-bottom:1px solid #334155;"><th style="padding:10px; color:#ff007f;">Annual Snowfall</th><td style="padding:10px;">300 inches</td></tr>
+      <tr style="border-bottom:1px solid #334155;"><th style="padding:10px; color:#ff007f;">Number of Trails</th><td style="padding:10px;">92 Trails + Open Bowls</td></tr>
+      <tr><th style="padding:10px; color:#ff007f;">Lifts System</th><td style="padding:10px;">10 Lifts (including Stella Express Six-Pack)</td></tr>
+    </tbody>
+  </table>
+</div>
 
-    img.src = canvas.toDataURL('image/png');
-    img.width = 210;
-    img.height = 50;
-  });
-})();
-</script>
+<div style="text-align:center; margin:30px 0;">
+  <a href="index.html" style="color:#00f0ff; text-decoration:none; font-weight:bold; font-size:18px;">← Return to Base Lodge Main Slopes</a>
+</div>
+
+<footer>Built by Christian Mohlenhoff &middot; BMIS 235</footer>
 
 </body>
 </html>
