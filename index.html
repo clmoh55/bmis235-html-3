@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <!--
-   Author: Christian Mohlenhoff
-   GU username: cmohlenhoff
-   Course: BMIS 235 - HTML-3
+  Author: Christian Mohlenhoff
+  GU username: cmohlenhoff
+  Course: BMIS 235 - HTML-3
 -->
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="author" content="Christian Mohlenhoff">
-  <title>Inland Northwest Winter Slopes</title>
+  <title>Inland Northwest Winter Slopes - Neon 80s PNW Shred</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -20,17 +20,327 @@
   <a href="fortynine.html"><img src="img/49degrees.png" alt="49 Degrees"></a>
 </nav>
 
-  <h1>Inland Northwest Winter Slopes</h1>
-  
-  <p>The Inland Northwest is home to some of the best skiing and snowboarding in the region. Whether you're looking for deep powder, well-groomed trails, or family-friendly slopes, nearby resorts offer great winter adventures for all skill levels.</p>
-  
-  <p>Explore three popular winter destinations in the area:</p>
-  
-  <ul>
-    <li><a href="schweitzer.html">Schweitzer Mountain Resort</a></li>
-    <li><a href="spokane.html">Mt. Spokane Ski & Snowboard Park</a></li>
-    <li><a href="fortynine.html">49 Degrees North Mountain Resort</a></li>
-  </ul>
-  
+<h1>Inland Northwest Winter Slopes</h1>
+
+<!-- Part 7 Showcase: Interactive 80s Arcade Ski Mini-Game -->
+<div class="showcase">
+  <!-- CSS Section: All rules scoped to .showcase -->
+  <style>
+    .showcase {
+      background: rgba(16, 42, 38, 0.95);
+      border: 3px solid #00f5d4;
+      border-radius: 12px;
+      padding: 12px;
+      box-shadow: 0 0 20px rgba(0, 245, 212, 0.4), 4px 4px 0px #ff2a85;
+      font-family: 'Trebuchet MS', sans-serif;
+      color: #e6f4f1;
+      max-height: 495px;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+    .showcase h2 {
+      margin: 0 0 8px 0;
+      font-size: 1.1rem;
+      color: #fee440;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-shadow: 0 0 8px #fee440, 2px 2px 0px #ff2a85;
+    }
+    .showcase canvas {
+      display: block;
+      width: 100%;
+      height: 250px;
+      background: #0b192c;
+      border: 2px solid #00f5d4;
+      border-radius: 8px;
+      box-sizing: border-box;
+    }
+    .showcase .arcade-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 8px;
+      gap: 6px;
+    }
+    .showcase button {
+      background: #102a26;
+      color: #00f5d4;
+      border: 2px solid #00f5d4;
+      border-radius: 6px;
+      padding: 6px 10px;
+      font-weight: bold;
+      font-family: 'Trebuchet MS', sans-serif;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-size: 0.8rem;
+    }
+    .showcase button:hover {
+      background: #ff2a85;
+      color: #fff;
+      box-shadow: 0 0 10px #ff2a85;
+    }
+    .showcase .warp-btn {
+      background: #ff2a85;
+      color: #fff;
+      border-color: #fee440;
+      box-shadow: 0 0 10px #ff2a85;
+      text-decoration: none;
+      display: inline-block;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 0.85rem;
+    }
+    .showcase .warp-btn:hover {
+      background: #00f5d4;
+      color: #0b192c;
+      box-shadow: 0 0 15px #00f5d4;
+    }
+    .showcase .stats-panel {
+      margin-top: 6px;
+      background: rgba(11, 25, 44, 0.8);
+      border: 1px solid #00f5d4;
+      border-radius: 6px;
+      padding: 6px 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+    }
+  </style>
+
+  <!-- HTML Section: Arcade Header, Canvas & Control Panel -->
+  <h2>⚡ 80s PNW Shred & Select Arcade ⚡</h2>
+  <canvas id="skiCanvas" width="700" height="250"></canvas>
+  <div class="arcade-controls">
+    <div>
+      <button onclick="movePlayer(-15)">◄ LEFT</button>
+      <button onclick="movePlayer(15)">RIGHT ►</button>
+      <button onclick="triggerJump()">🚀 JUMP / FLIP</button>
+    </div>
+    <div id="warpArea">
+      <span style="font-size: 0.75rem; color:#fee440;">Ski into a gate or select:</span>
+    </div>
+  </div>
+  <div class="stats-panel" id="resortStats">
+    <span><b>Select Mountain:</b> Use Arrow Keys/A-D/Buttons to slalom into Schweitzer, Mt. Spokane, or 49° North!</span>
+    <div>
+      <button onclick="selectResort('schweitzer')">Schweitzer</button>
+      <button onclick="selectResort('spokane')">Mt. Spokane</button>
+      <button onclick="selectResort('fortynine')">49° North</button>
+    </div>
+  </div>
+
+  <!-- JavaScript Section: Mini-game engine & resort gate hit detection -->
+  <script>
+    (function() {
+      const canvas = document.getElementById('skiCanvas');
+      const ctx = canvas.getContext('2d');
+
+      let skier = { x: 350, y: 70, dx: 0, flipAngle: 0, isJumping: false, jumpHeight: 0, trickText: '' };
+      let speed = 2.5;
+      let score = 0;
+      let snow = Array.from({length: 40}, () => ({ x: Math.random()*700, y: Math.random()*250, r: Math.random()*2.5+1 }));
+      let trees = Array.from({length: 8}, () => ({ x: Math.random()*660+20, y: Math.random()*200+50 }));
+      
+      const gates = [
+        { name: 'SCHWEITZER', x: 120, y: 200, color: '#00f5d4', page: 'schweitzer.html', drop: '2,400 FT', acres: '2,900', gnar: '9.8/10' },
+        { name: 'MT. SPOKANE', x: 350, y: 200, color: '#ff2a85', page: 'spokane.html', drop: '2,000 FT', acres: '1,704', gnar: '9.2/10' },
+        { name: '49 DEGREES N', x: 580, y: 200, color: '#fee440', page: 'fortynine.html', drop: '1,851 FT', acres: '2,325', gnar: '9.5/10' }
+      ];
+
+      window.movePlayer = function(dir) {
+        skier.x = Math.max(40, Math.min(660, skier.x + dir));
+      };
+
+      window.triggerJump = function() {
+        if (!skier.isJumping) {
+          skier.isJumping = true;
+          skier.trickText = 'GNARLY 360 BACKFLIP! +500 PTS';
+          score += 500;
+          setTimeout(() => { skier.isJumping = false; skier.trickText = ''; }, 800);
+        }
+      };
+
+      window.selectResort = function(key) {
+        const target = gates.find(g => g.page.includes(key));
+        if (target) activateWarp(target);
+      };
+
+      function activateWarp(g) {
+        document.getElementById('warpArea').innerHTML = `<a class="warp-btn" href="${g.page}">WARP TO ${g.name} PAGE >></a>`;
+        document.getElementById('resortStats').innerHTML = `<span><b>${g.name}:</b> Drop: ${g.drop} | Acres: ${g.acres} | Gnar: ${g.gnar}</span> <a class="warp-btn" href="${g.page}">GO NOW!</a>`;
+      }
+
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft' || e.key === 'a' || e.key === 'A') movePlayer(-20);
+        if (e.key === 'ArrowRight' || e.key === 'd' || e.key === 'D') movePlayer(20);
+        if (e.key === ' ' || e.key === 'ArrowUp') triggerJump();
+      });
+
+      function draw() {
+        let grad = ctx.createLinearGradient(0, 0, 0, 250);
+        grad.addColorStop(0, '#0b192c');
+        grad.addColorStop(0.4, '#102a26');
+        grad.addColorStop(1, '#162636');
+        ctx.fillStyle = grad;
+        ctx.fillRect(0, 0, 700, 250);
+
+        ctx.strokeStyle = 'rgba(0, 245, 212, 0.15)';
+        ctx.lineWidth = 1;
+        for (let x = 0; x < 700; x += 40) {
+          ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, 250); ctx.stroke();
+        }
+
+        ctx.fillStyle = '#ffffff';
+        snow.forEach(s => {
+          s.y += speed * 0.5;
+          if (s.y > 250) s.y = 0;
+          ctx.beginPath(); ctx.arc(s.x, s.y, s.r, 0, Math.PI*2); ctx.fill();
+        });
+
+        trees.forEach(t => {
+          t.y -= speed * 0.8;
+          if (t.y < 20) { t.y = 240; t.x = Math.random()*660 + 20; }
+          ctx.fillStyle = '#0f382c';
+          ctx.beginPath();
+          ctx.moveTo(t.x, t.y - 15);
+          ctx.lineTo(t.x - 10, t.y + 10);
+          ctx.lineTo(t.x + 10, t.y + 10);
+          ctx.fill();
+        });
+
+        gates.forEach(g => {
+          ctx.strokeStyle = g.color;
+          ctx.lineWidth = 4;
+          ctx.shadowColor = g.color;
+          ctx.shadowBlur = 10;
+          ctx.strokeRect(g.x - 35, g.y - 25, 70, 35);
+          ctx.shadowBlur = 0;
+
+          ctx.fillStyle = '#ffffff';
+          ctx.font = '9px "Trebuchet MS", sans-serif';
+          ctx.textAlign = 'center';
+          ctx.fillText(g.name, g.x, g.y - 5);
+
+          if (Math.abs(skier.x - g.x) < 35 && Math.abs(skier.y + (skier.isJumping ? -20 : 0) - g.y) < 25) {
+            activateWarp(g);
+          }
+        });
+
+        ctx.save();
+        let drawY = skier.y;
+        if (skier.isJumping) {
+          drawY -= 25;
+          skier.flipAngle += 0.2;
+        } else {
+          skier.flipAngle = 0;
+        }
+
+        ctx.translate(skier.x, drawY);
+        ctx.rotate(skier.flipAngle);
+
+        ctx.strokeStyle = '#39ff14';
+        ctx.lineWidth = 3;
+        ctx.beginPath();
+        ctx.arc(0, -12, 5, 0, Math.PI * 2);
+        ctx.moveTo(0, -7); ctx.lineTo(0, 8);
+        ctx.moveTo(0, -2); ctx.lineTo(-8, 3);
+        ctx.moveTo(0, -2); ctx.lineTo(8, 3);
+        ctx.moveTo(0, 8); ctx.lineTo(-6, 18);
+        ctx.moveTo(0, 8); ctx.lineTo(6, 18);
+        ctx.stroke();
+
+        ctx.strokeStyle = '#ff2a85';
+        ctx.lineWidth = 3;
+        ctx.beginPath();
+        ctx.moveTo(-12, 20); ctx.lineTo(-2, 20);
+        ctx.moveTo(2, 20); ctx.lineTo(12, 20);
+        ctx.stroke();
+
+        ctx.restore();
+
+        if (skier.trickText) {
+          ctx.fillStyle = '#fee440';
+          ctx.font = 'bold 12px "Trebuchet MS", sans-serif';
+          ctx.textAlign = 'center';
+          ctx.fillText(skier.trickText, skier.x, skier.y - 45);
+        }
+
+        requestAnimationFrame(draw);
+      }
+
+      draw();
+    })();
+  </script>
+</div>
+
+<!-- Mountain & Action Visuals Section -->
+<div class="retro-card">
+  <h2>🏔️ Inland Northwest Powder Showcase 🏔️</h2>
+  <p>Experience the legendary powder, massive vertical drops, and night skiing sessions across the Inland Pacific Northwest.</p>
+
+  <div style="display:inline-block; background:#ff2a85; color:#fff; padding:6px 12px; border-radius:20px; font-weight:bold; font-size:0.85rem; margin-bottom:15px; box-shadow: 0 0 10px #ff2a85;">
+    🔴 LIVE 80s SNOWBOARD BACKFLIP CAM
+  </div>
+
+  <div class="media-grid">
+    <div>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/e/ea/Freestyle_skiing_jump2.jpg" alt="Freestyle Ski Jump Action" class="action-img">
+      <p><b>Big Air Freestyle:</b> Launching off kicker ramps in the Selkirks.</p>
+    </div>
+    <div>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/Snowboarder_in_halfpipe.jpg" alt="Snowboarder Halfpipe Shred" class="action-img">
+      <p><b>Halfpipe & Glades:</b> High-energy snowboarding action.</p>
+    </div>
+    <div>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/8/86/Schweitzer_Mountain_Village.JPG" alt="Schweitzer Mountain Village" class="action-img">
+      <p><b>Alpine Base Village:</b> Sweeping views of Schweitzer & Lake Pend Oreille.</p>
+    </div>
+  </div>
+</div>
+
+<div class="retro-card">
+  <h2>Resort Comparison Overview</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Resort Name</th>
+        <th>Vertical Drop</th>
+        <th>Skiable Acres</th>
+        <th>Key Feature</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a href="schweitzer.html">Schweitzer</a></td>
+        <td>2,900 ft</td>
+        <td>2,900 acres</td>
+        <td>Lake Pend Oreille views & bowl skiing</td>
+      </tr>
+      <tr>
+        <td><a href="spokane.html">Mt. Spokane</a></td>
+        <td>2,000 ft</td>
+        <td>1,704 acres</td>
+        <td>16 illuminated night skiing runs & Lodge 2</td>
+      </tr>
+      <tr>
+        <td><a href="fortynine.html">49 Degrees North</a></td>
+        <td>1,851 ft</td>
+        <td>2,325 acres</td>
+        <td>Chewelah Peak glades & high-speed quad</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="retro-card">
+  <h2>Learn More & Contact</h2>
+  <p>Interested in learning more about PNW winter sports or Gonzaga academic programs? Visit <a href="https://www.gonzaga.edu" target="_blank">Gonzaga University</a> or email <a href="mailto:cmohlenhoff@zagmail.gonzaga.edu">cmohlenhoff@zagmail.gonzaga.edu</a>.</p>
+</div>
+
+<footer>Built by Christian Mohlenhoff &middot; BMIS 235</footer>
+
 </body>
 </html>
