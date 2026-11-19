@@ -6,100 +6,135 @@
 -->
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="author" content="Christian Mohlenhoff">
-  <title>Schweitzer Bowls - Inland Northwest Winter Slopes</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8">
+    <meta name="author" content="Christian Mohlenhoff">
+    <title>Schweitzer Bowls - Inland Northwest Winter Slopes</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    </style>
 </head>
 <body>
 
 <nav>
-  <a href="index.html"><img src="img/home.png" alt="Base Lodge" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/PNW_icon.png/200px-PNW_icon.png';"></a>
-  <a href="schweitzer.html"><img src="img/schweitzer.png" alt="Schweitzer Bowls" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/PNW_icon.png/200px-PNW_icon.png';"></a>
-  <a href="spokane.html"><img src="img/mtspokane.png" alt="Spokane Nights" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/PNW_icon.png/200px-PNW_icon.png';"></a>
-  <a href="fortynine.html"><img src="img/49degrees.png" alt="49 North Glades" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/PNW_icon.png/200px-PNW_icon.png';"></a>
+    <a href="index.html"><img src="img/home.png" alt="Base Lodge" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Home_icon_%20white.svg/240px-Home_icon_%20white.svg.png';"></a>
+    <a href="schweitzer.html"><img src="img/schweitzer.png" alt="Schweitzer Bowls" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Mountain_icon_white.svg/240px-Mountain_icon_white.svg.png';"></a>
+    <a href="spokane.html"><img src="img/mtspokane.png" alt="Spokane Nights" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Night_skiing_icon.svg/240px-Night_skiing_icon.svg.png';"></a>
+    <a href="fortynine.html"><img src="img/49degrees.png" alt="49 North Glades" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Pine_tree_icon.svg/240px-Pine_tree_icon.svg.png';"></a>
 </nav>
 
-<script>
-(function generateNavButtons() {
-  function renderButtons() {
-    const buttons = [
-      { selector: 'a[href="index.html"] img', text: 'BASE LODGE' },
-      { selector: 'a[href="schweitzer.html"] img', text: 'SCHWEITZER BOWLS' },
-      { selector: 'a[href="spokane.html"] img', text: 'SPOKANE NIGHTS' },
-      { selector: 'a[href="fortynine.html"] img', text: '49° NORTH GLADES' }
-    ];
-    buttons.forEach(b => {
-      const imgs = document.querySelectorAll(b.selector);
-      imgs.forEach(img => {
-        const canvas = document.createElement('canvas');
-        canvas.width = 215;
-        canvas.height = 50;
-        const ctx = canvas.getContext('2d');
-        const grad = ctx.createLinearGradient(0, 0, 215, 50);
-        grad.addColorStop(0, '#1e1035');
-        grad.addColorStop(0.5, '#2b0c36');
-        grad.addColorStop(1, '#0f2027');
-        ctx.fillStyle = grad;
-        ctx.fillRect(0, 0, 215, 50);
-        ctx.strokeStyle = '#00f5d4';
-        ctx.lineWidth = 3;
-        ctx.strokeRect(2, 2, 211, 46);
-        ctx.strokeStyle = '#ff2a85';
-        ctx.lineWidth = 2;
-        ctx.beginPath();
-        ctx.moveTo(4, 45);
-        ctx.lineTo(211, 45);
-        ctx.stroke();
-        ctx.fillStyle = '#ffee00';
-        ctx.shadowColor = '#ff2a85';
-        ctx.shadowBlur = 4;
-        ctx.font = 'bold 15px sans-serif';
-        ctx.textAlign = 'center';
-        ctx.textBaseline = 'middle';
-        ctx.fillText(b.text, 107.5, 24);
-        const dataUrl = canvas.toDataURL();
-        img.src = dataUrl;
-        img.removeAttribute('onerror');
-      });
-    });
-  }
-  renderButtons();
-  window.addEventListener('load', renderButtons);
-  document.addEventListener('DOMContentLoaded', renderButtons);
-})();
-</script>
+<header style="text-align: center; margin-top: 20px;">
+    <h1>Schweitzer Mountain Resort</h1>
+    <p>Massive Terrain & Lake Views in Sandpoint, Idaho</p>
+</header>
 
-<h1>Schweitzer Mountain Resort</h1>
-<p style="text-align:center; color:#00f0ff; font-weight:bold;">Sandpoint, Idaho &middot; Selkirk Mountains &middot; Lake Pend Oreille Views</p>
+<main style="max-width: 900px; margin: 0 auto; padding: 20px;">
+    <section style="margin-bottom: 30px;">
+        <h2>Overview</h2>
+        <p>Schweitzer is the largest ski resort in Idaho and Washington, featuring 2,900 acres of terrain, deep snow, and stunning views of Lake Pend Oreille.</p>
+    </section>
 
-<div class="cards-container" style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap; margin:30px 0;">
-  <div class="card" style="max-width:400px; background:#1e293b; border-radius:10px; overflow:hidden; border:2px solid #00f0ff; color:#fff; text-align:center;">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Schweitzer_Mountain_Sandpoint_und_Lake_Pend_Oreille.JPG" alt="Schweitzer Mountain overlooking Lake Pend Oreille" style="width:100%; height:240px; object-fit:cover;">
-    <div style="padding:15px;">
-      <h3 style="color:#ff007f; margin-top:0;">Scenic Lake Pend Oreille View</h3>
-      <p style="color:#e2e8f0; font-size:14px;">Breathtaking views overlooking Sandpoint and Lake Pend Oreille from the summit bowls.</p>
-    </div>
-  </div>
-  <div class="card" style="max-width:400px; background:#1e293b; border-radius:10px; overflow:hidden; border:2px solid #00f0ff; color:#fff; text-align:center;">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/e/ea/Freestyle_skiing_jump2.jpg" alt="Freestyle skiing jump action photo" style="width:100%; height:240px; object-fit:cover;">
-    <div style="padding:15px;">
-      <h3 style="color:#ff007f; margin-top:0;">Freestyle Skiing Action</h3>
-      <p style="color:#e2e8f0; font-size:14px;">High-altitude freestyle tricks and steep open bowl powder runs.</p>
-    </div>
-  </div>
-</div>
+    <!-- Animated graphic showing mountain elevation / tree lines & snow/powder motion -->
+    <section style="text-align: center; margin: 30px auto;">
+        <h2>Mountain Elevation & Snow Powder Motion</h2>
+        <canvas id="schweitzerCanvas" width="700" height="250" style="border:1px solid #ccc; background:#0f172a; border-radius:8px; display:block; margin:0 auto; max-width:100%;"></canvas>
+        <script>
+            (function(){
+                const canvas = document.getElementById('schweitzerCanvas');
+                if(!canvas) return;
+                const ctx = canvas.getContext('2d');
+                let flakes = [];
+                for(let i=0; i<70; i++){
+                    flakes.push({x: Math.random()*700, y: Math.random()*250, r: Math.random()*3+1, s: Math.random()*1.5+0.5, dx: Math.random()*1-0.5});
+                }
+                function draw(){
+                    ctx.clearRect(0,0,700,250);
+                    let grad = ctx.createLinearGradient(0,0,0,250);
+                    grad.addColorStop(0, '#0f172a');
+                    grad.addColorStop(1, '#334155');
+                    ctx.fillStyle = grad;
+                    ctx.fillRect(0,0,700,250);
 
-<div style="max-width:800px; margin:0 auto; color:#e2e8f0; line-height:1.6;">
-  <h2 style="color:#00f0ff; text-align:center;">About Schweitzer</h2>
-  <p>Schweitzer is the largest ski resort in Idaho and Washington, offering 2,900 acres of terrain, 10 lifts, and 2,400 feet of vertical drop. Located in northern Idaho's Selkirk Mountains, it provides unbeatable tree skiing and stunning vistas of Lake Pend Oreille.</p>
-</div>
+                    // Mountain elevation silhouette 1
+                    ctx.fillStyle = '#334155';
+                    ctx.beginPath();
+                    ctx.moveTo(0, 250);
+                    ctx.lineTo(120, 90);
+                    ctx.lineTo(260, 250);
+                    ctx.fill();
 
-<div style="text-align:center; margin:30px 0; color:#cbd5e1;">
-  <p><a href="index.html" style="color:#00f0ff; font-weight:bold;">&larr; Back to Base Lodge</a></p>
-</div>
+                    // Mountain elevation silhouette 2 (main peak)
+                    ctx.fillStyle = '#475569';
+                    ctx.beginPath();
+                    ctx.moveTo(180, 250);
+                    ctx.lineTo(380, 40);
+                    ctx.lineTo(580, 250);
+                    ctx.fill();
 
-<footer>Built by Christian Mohlenhoff &middot; BMIS 235</footer>
+                    // Snow cap main peak
+                    ctx.fillStyle = '#ffffff';
+                    ctx.beginPath();
+                    ctx.moveTo(380, 40);
+                    ctx.lineTo(350, 80);
+                    ctx.lineTo(410, 80);
+                    ctx.closePath();
+                    ctx.fill();
+
+                    // Mountain elevation silhouette 3
+                    ctx.fillStyle = '#64748b';
+                    ctx.beginPath();
+                    ctx.moveTo(480, 250);
+                    ctx.lineTo(600, 110);
+                    ctx.lineTo(700, 250);
+                    ctx.fill();
+
+                    // Tree lines
+                    ctx.fillStyle = '#15803d';
+                    for(let x=10; x<690; x+=20){
+                        let h = 20 + (x % 15);
+                        ctx.beginPath();
+                        ctx.moveTo(x, 250);
+                        ctx.lineTo(x+7, 250 - h);
+                        ctx.lineTo(x+14, 250);
+                        ctx.fill();
+                    }
+
+                    // Snow powder motion
+                    ctx.fillStyle = '#ffffff';
+                    flakes.forEach(f => {
+                        ctx.beginPath();
+                        ctx.arc(f.x, f.y, f.r, 0, Math.PI*2);
+                        ctx.fill();
+                        f.y += f.s;
+                        f.x += f.dx;
+                        if(f.y > 250) f.y = 0;
+                        if(f.x > 700) f.x = 0;
+                        if(f.x < 0) f.x = 700;
+                    });
+                    requestAnimationFrame(draw);
+                }
+                draw();
+            })();
+        </script>
+    </section>
+
+    <section style="margin-bottom: 30px;">
+        <h2>Resort Stats</h2>
+        <ul>
+            <li>Skiable Acres: 2,900</li>
+            <li>Vertical Drop: 2,400 ft</li>
+            <li>Average Snowfall: 300 inches</li>
+        </ul>
+    </section>
+</main>
+
+<footer style="text-align: center; padding: 20px;">
+    <p>&copy; 2026 Inland Northwest Winter Slopes. All rights reserved.</p>
+</footer>
 
 </body>
 </html>
