@@ -14,122 +14,89 @@
 <body>
 
 <nav>
-  <a href="index.html"><img src="img/home.png" alt="Base Lodge" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/e/ea/Freestyle_skiing_jump2.jpg';"></a>
-  <a href="schweitzer.html"><img src="img/schweitzer.png" alt="Schweitzer Bowls" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/e/ea/Freestyle_skiing_jump2.jpg';"></a>
-  <a href="spokane.html"><img src="img/mtspokane.png" alt="Spokane Nights" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/6/69/Snowboarder_in_halfpipe.jpg';"></a>
-  <a href="fortynine.html"><img src="img/49degrees.png" alt="49 North Glades" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/e/ea/Freestyle_skiing_jump2.jpg';"></a>
+  <a href="index.html"><img src="img/home.png" alt="Base Lodge" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/PNW_icon.png/200px-PNW_icon.png';"></a>
+  <a href="schweitzer.html"><img src="img/schweitzer.png" alt="Schweitzer Bowls" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/PNW_icon.png/200px-PNW_icon.png';"></a>
+  <a href="spokane.html"><img src="img/mtspokane.png" alt="Spokane Nights" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/PNW_icon.png/200px-PNW_icon.png';"></a>
+  <a href="fortynine.html"><img src="img/49degrees.png" alt="49 North Glades" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/PNW_icon.png/200px-PNW_icon.png';"></a>
 </nav>
+
+<script>
+(function generateNavButtons() {
+  function renderButtons() {
+    const buttons = [
+      { selector: 'a[href="index.html"] img', text: 'BASE LODGE' },
+      { selector: 'a[href="schweitzer.html"] img', text: 'SCHWEITZER BOWLS' },
+      { selector: 'a[href="spokane.html"] img', text: 'SPOKANE NIGHTS' },
+      { selector: 'a[href="fortynine.html"] img', text: '49° NORTH GLADES' }
+    ];
+    buttons.forEach(b => {
+      const imgs = document.querySelectorAll(b.selector);
+      imgs.forEach(img => {
+        const canvas = document.createElement('canvas');
+        canvas.width = 215;
+        canvas.height = 50;
+        const ctx = canvas.getContext('2d');
+        const grad = ctx.createLinearGradient(0, 0, 215, 50);
+        grad.addColorStop(0, '#1e1035');
+        grad.addColorStop(0.5, '#2b0c36');
+        grad.addColorStop(1, '#0f2027');
+        ctx.fillStyle = grad;
+        ctx.fillRect(0, 0, 215, 50);
+        ctx.strokeStyle = '#00f5d4';
+        ctx.lineWidth = 3;
+        ctx.strokeRect(2, 2, 211, 46);
+        ctx.strokeStyle = '#ff2a85';
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(4, 45);
+        ctx.lineTo(211, 45);
+        ctx.stroke();
+        ctx.fillStyle = '#ffee00';
+        ctx.shadowColor = '#ff2a85';
+        ctx.shadowBlur = 4;
+        ctx.font = 'bold 15px sans-serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(b.text, 107.5, 24);
+        const dataUrl = canvas.toDataURL();
+        img.src = dataUrl;
+        img.removeAttribute('onerror');
+      });
+    });
+  }
+  renderButtons();
+  window.addEventListener('load', renderButtons);
+  document.addEventListener('DOMContentLoaded', renderButtons);
+})();
+</script>
 
 <h1>Schweitzer Mountain Resort</h1>
 <p style="text-align:center; color:#00f0ff; font-weight:bold;">Sandpoint, Idaho &middot; Selkirk Mountains &middot; Lake Pend Oreille Views</p>
 
-<div style="max-width:900px; margin:20px auto; text-align:center;">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/e/ea/Freestyle_skiing_jump2.jpg" alt="Big Air Freestyle Jump at Schweitzer" style="width:100%; max-height:400px; object-fit:cover; border-radius:10px; border:2px solid #ff007f;" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/e/ea/Freestyle_skiing_jump2.jpg';">
+<div class="cards-container" style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap; margin:30px 0;">
+  <div class="card" style="max-width:400px; background:#1e293b; border-radius:10px; overflow:hidden; border:2px solid #00f0ff; color:#fff; text-align:center;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Schweitzer_Mountain_Sandpoint_und_Lake_Pend_Oreille.JPG" alt="Schweitzer Mountain overlooking Lake Pend Oreille" style="width:100%; height:240px; object-fit:cover;">
+    <div style="padding:15px;">
+      <h3 style="color:#ff007f; margin-top:0;">Scenic Lake Pend Oreille View</h3>
+      <p style="color:#e2e8f0; font-size:14px;">Breathtaking views overlooking Sandpoint and Lake Pend Oreille from the summit bowls.</p>
+    </div>
+  </div>
+  <div class="card" style="max-width:400px; background:#1e293b; border-radius:10px; overflow:hidden; border:2px solid #00f0ff; color:#fff; text-align:center;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/e/ea/Freestyle_skiing_jump2.jpg" alt="Freestyle skiing jump action photo" style="width:100%; height:240px; object-fit:cover;">
+    <div style="padding:15px;">
+      <h3 style="color:#ff007f; margin-top:0;">Freestyle Skiing Action</h3>
+      <p style="color:#e2e8f0; font-size:14px;">High-altitude freestyle tricks and steep open bowl powder runs.</p>
+    </div>
+  </div>
 </div>
 
-<div style="text-align:center; margin:30px auto; max-width:800px; background:#0d1117; border:3px solid #00f0ff; border-radius:12px; padding:15px; box-shadow:0 0 15px rgba(0,240,255,0.4);">
-  <h2 style="color:#00f0ff; margin-top:0;">🔴 ANIMATED 80s SKI-JUMP LOOP</h2>
-  <canvas id="skiJumpCanvas" width="700" height="250" style="background:#0f172a; border-radius:8px; width:100%; max-width:700px;"></canvas>
-  <script>
-    (function() {
-      const cvs = document.getElementById('skiJumpCanvas');
-      if (!cvs) return;
-      const ctx = cvs.getContext('2d');
-      let t = 0;
-      function render() {
-        t += 0.04;
-        ctx.clearRect(0,0,cvs.width,cvs.height);
-        
-        ctx.fillStyle = '#1e293b';
-        ctx.beginPath();
-        ctx.moveTo(0, 100);
-        ctx.lineTo(250, 180);
-        ctx.lineTo(250, 250);
-        ctx.lineTo(0, 250);
-        ctx.fill();
-
-        ctx.fillStyle = '#ff007f';
-        ctx.beginPath();
-        ctx.moveTo(220, 170);
-        ctx.lineTo(250, 150);
-        ctx.lineTo(250, 180);
-        ctx.fill();
-
-        ctx.fillStyle = '#334155';
-        ctx.beginPath();
-        ctx.moveTo(400, 200);
-        ctx.lineTo(700, 230);
-        ctx.lineTo(700, 250);
-        ctx.lineTo(400, 250);
-        ctx.fill();
-
-        let phase = (t % 4) / 4;
-        let sx, sy, rot = 0;
-        if (phase < 0.3) {
-          let p = phase / 0.3;
-          sx = p * 250;
-          sy = 100 + p * 50;
-        } else if (phase < 0.75) {
-          let p = (phase - 0.3) / 0.45;
-          sx = 250 + p * 200;
-          sy = 150 - Math.sin(p * Math.PI) * 90;
-          rot = p * Math.PI * 2;
-        } else {
-          let p = (phase - 0.75) / 0.25;
-          sx = 450 + p * 250;
-          sy = 205 + p * 25;
-        }
-
-        ctx.save();
-        ctx.translate(sx, sy);
-        ctx.rotate(rot);
-        ctx.fillStyle = '#38bdf8';
-        ctx.fillRect(-6, -10, 12, 20);
-        ctx.fillStyle = '#ff007f';
-        ctx.beginPath(); ctx.arc(0, -14, 6, 0, Math.PI*2); ctx.fill();
-        ctx.restore();
-
-        ctx.fillStyle = '#39ff14';
-        ctx.font = 'bold 14px monospace';
-        ctx.fillText('SELKIRK BIG AIR LOOP - AIRTIME: 100%', 20, 30);
-
-        requestAnimationFrame(render);
-      }
-      render();
-    })();
-  </script>
+<div style="max-width:800px; margin:0 auto; color:#e2e8f0; line-height:1.6;">
+  <h2 style="color:#00f0ff; text-align:center;">About Schweitzer</h2>
+  <p>Schweitzer is the largest ski resort in Idaho and Washington, offering 2,900 acres of terrain, 10 lifts, and 2,400 feet of vertical drop. Located in northern Idaho's Selkirk Mountains, it provides unbeatable tree skiing and stunning vistas of Lake Pend Oreille.</p>
 </div>
 
-<div style="text-align:center; margin:30px auto; max-width:800px;">
-  <svg width="100%" height="220" viewBox="0 0 800 220" style="background:linear-gradient(to bottom, #0f172a, #1e3a8a); border-radius:10px; border:2px solid #39ff14;">
-    <polygon points="0,220 150,80 300,220" fill="#334155"/>
-    <polygon points="150,80 180,120 150,220" fill="#1e293b"/>
-    <polygon points="150,80 130,120 170,120" fill="#ffffff"/>
-    <polygon points="250,220 450,40 650,220" fill="#475569"/>
-    <polygon points="450,40 480,90 450,220" fill="#334155"/>
-    <polygon points="450,40 420,90 480,90" fill="#ffffff"/>
-    <path d="M 0 220 C 200 160, 600 160, 800 220 Z" fill="#0284c7" opacity="0.8"/>
-    <text x="400" y="200" fill="#ffffff" font-family="sans-serif" font-weight="bold" font-size="18" text-anchor="middle">Lake Pend Oreille & Selkirk Crest Vista</text>
-  </svg>
-</div>
-
-<div style="max-width:900px; margin:30px auto; color:#fff; background:#1e293b; padding:20px; border-radius:10px; border:1px solid #00f0ff;">
-  <h2 style="text-align:center; color:#00f0ff;">Schweitzer Mountain Detailed Resort Stats</h2>
-  <table style="width:100%; border-collapse:collapse; text-align:left;">
-    <tbody>
-      <tr style="border-bottom:1px solid #334155;"><th style="padding:10px; color:#ff007f;">Top Elevation</th><td style="padding:10px;">6,400 ft</td></tr>
-      <tr style="border-bottom:1px solid #334155;"><th style="padding:10px; color:#ff007f;">Base Elevation</th><td style="padding:10px;">4,000 ft</td></tr>
-      <tr style="border-bottom:1px solid #334155;"><th style="padding:10px; color:#ff007f;">Vertical Drop</th><td style="padding:10px;">2,400 ft</td></tr>
-      <tr style="border-bottom:1px solid #334155;"><th style="padding:10px; color:#ff007f;">Skiable Terrain</th><td style="padding:10px;">2,900 acres</td></tr>
-      <tr style="border-bottom:1px solid #334155;"><th style="padding:10px; color:#ff007f;">Annual Snowfall</th><td style="padding:10px;">300 inches</td></tr>
-      <tr style="border-bottom:1px solid #334155;"><th style="padding:10px; color:#ff007f;">Number of Trails</th><td style="padding:10px;">92 Trails + Open Bowls</td></tr>
-      <tr><th style="padding:10px; color:#ff007f;">Lifts System</th><td style="padding:10px;">10 Lifts (including Stella Express Six-Pack)</td></tr>
-    </tbody>
-  </table>
-</div>
-
-<div style="text-align:center; margin:30px 0;">
-  <a href="index.html" style="color:#00f0ff; text-decoration:none; font-weight:bold; font-size:18px;">← Return to Base Lodge Main Slopes</a>
+<div style="text-align:center; margin:30px 0; color:#cbd5e1;">
+  <p><a href="index.html" style="color:#00f0ff; font-weight:bold;">&larr; Back to Base Lodge</a></p>
 </div>
 
 <footer>Built by Christian Mohlenhoff &middot; BMIS 235</footer>
