@@ -14,119 +14,93 @@
 <body>
 
 <nav>
-  <a href="index.html"><img src="img/home.png" alt="Base Lodge" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/e/ea/Freestyle_skiing_jump2.jpg';"></a>
-  <a href="schweitzer.html"><img src="img/schweitzer.png" alt="Schweitzer Bowls" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/e/ea/Freestyle_skiing_jump2.jpg';"></a>
-  <a href="spokane.html"><img src="img/mtspokane.png" alt="Spokane Nights" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/6/69/Snowboarder_in_halfpipe.jpg';"></a>
-  <a href="fortynine.html"><img src="img/49degrees.png" alt="49 North Glades" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/e/ea/Freestyle_skiing_jump2.jpg';"></a>
+  <a href="index.html"><img src="img/home.png" alt="Base Lodge" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/PNW_icon.png/200px-PNW_icon.png';"></a>
+  <a href="schweitzer.html"><img src="img/schweitzer.png" alt="Schweitzer Bowls" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/PNW_icon.png/200px-PNW_icon.png';"></a>
+  <a href="spokane.html"><img src="img/mtspokane.png" alt="Spokane Nights" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/PNW_icon.png/200px-PNW_icon.png';"></a>
+  <a href="fortynine.html"><img src="img/49degrees.png" alt="49 North Glades" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/PNW_icon.png/200px-PNW_icon.png';"></a>
 </nav>
 
-<h1>Mt. Spokane Ski &amp; Snowboard Park</h1>
-<p style="text-align:center; color:#ff007f; font-weight:bold;">Mead, Washington &middot; Night Skiing Capital &middot; 16 Illuminated Night Trails</p>
-
-<div style="max-width:900px; margin:20px auto; text-align:center;">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/Snowboarder_in_halfpipe.jpg" alt="Halfpipe Snowboard Send under Night Lights" style="width:100%; max-height:400px; object-fit:cover; border-radius:10px; border:2px solid #00f0ff;" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/6/69/Snowboarder_in_halfpipe.jpg';">
-</div>
-
-<div style="text-align:center; margin:30px auto; max-width:800px; background:#090d16; border:3px solid #ff007f; border-radius:12px; padding:15px; box-shadow:0 0 20px rgba(255,0,127,0.5);">
-  <h2 style="color:#ff007f; margin-top:0;">🔴 NIGHT SKIING NEON SHRED</h2>
-  <canvas id="spokaneNightCanvas" width="700" height="260" style="background:#030712; border-radius:8px; width:100%; max-width:700px;"></canvas>
-  <script>
-    (function() {
-      const cvs = document.getElementById('spokaneNightCanvas');
-      if (!cvs) return;
-      const ctx = cvs.getContext('2d');
-      let angle1 = 0, angle2 = Math.PI;
-
-      function render() {
-        angle1 += 0.02;
-        angle2 += 0.025;
-        ctx.clearRect(0,0,cvs.width,cvs.height);
-
-        ctx.fillStyle = '#0f172a';
-        ctx.fillRect(0,0,cvs.width,cvs.height);
-
-        ctx.save();
-        ctx.beginPath();
-        ctx.moveTo(150, 240);
-        let beam1X = 150 + Math.sin(angle1) * 220;
-        ctx.lineTo(beam1X - 60, 0);
-        ctx.lineTo(beam1X + 60, 0);
-        ctx.closePath();
-        let grad1 = ctx.createLinearGradient(150,240, beam1X, 0);
-        grad1.addColorStop(0, 'rgba(255, 0, 127, 0.8)');
-        grad1.addColorStop(1, 'rgba(255, 0, 127, 0)');
-        ctx.fillStyle = grad1;
-        ctx.fill();
-        ctx.restore();
-
-        ctx.save();
-        ctx.beginPath();
-        ctx.moveTo(550, 240);
-        let beam2X = 550 + Math.cos(angle2) * 220;
-        ctx.lineTo(beam2X - 60, 0);
-        ctx.lineTo(beam2X + 60, 0);
-        ctx.closePath();
-        let grad2 = ctx.createLinearGradient(550,240, beam2X, 0);
-        grad2.addColorStop(0, 'rgba(0, 240, 255, 0.8)');
-        grad2.addColorStop(1, 'rgba(0, 240, 255, 0)');
-        ctx.fillStyle = grad2;
-        ctx.fill();
-        ctx.restore();
-
-        ctx.fillStyle = '#1e1b4b';
-        ctx.beginPath();
-        ctx.moveTo(0, 260);
-        ctx.lineTo(150, 120);
-        ctx.lineTo(350, 80);
-        ctx.lineTo(550, 140);
-        ctx.lineTo(700, 260);
-        ctx.fill();
-
+<script>
+(function generateNavButtons() {
+  function renderButtons() {
+    const deg = String.fromCharCode(176);
+    const buttons = [
+      { selector: 'a[href="index.html"] img', text: 'BASE LODGE' },
+      { selector: 'a[href="schweitzer.html"] img', text: 'SCHWEITZER BOWLS' },
+      { selector: 'a[href="spokane.html"] img', text: 'SPOKANE NIGHTS' },
+      { selector: 'a[href="fortynine.html"] img', text: '49' + deg + ' NORTH GLADES' }
+    ];
+    buttons.forEach(b => {
+      const imgs = document.querySelectorAll(b.selector);
+      imgs.forEach(img => {
+        const canvas = document.createElement('canvas');
+        canvas.width = 215;
+        canvas.height = 50;
+        const ctx = canvas.getContext('2d');
+        const grad = ctx.createLinearGradient(0, 0, 215, 50);
+        grad.addColorStop(0, '#1e1035');
+        grad.addColorStop(0.5, '#2b0c36');
+        grad.addColorStop(1, '#0f2027');
+        ctx.fillStyle = grad;
+        ctx.fillRect(0, 0, 215, 50);
+        ctx.strokeStyle = '#00f5d4';
+        ctx.lineWidth = 3;
+        ctx.strokeRect(2, 2, 211, 46);
+        ctx.strokeStyle = '#ff2a85';
         ctx.lineWidth = 2;
-        for (let i = 0; i < 16; i++) {
-          let startX = 200 + (i * 20);
-          let startY = 90 + Math.sin(i) * 20;
-          let endX = 50 + (i * 40);
-          let endY = 250;
-          ctx.strokeStyle = (i % 2 === 0) ? '#00f0ff' : '#ff007f';
-          ctx.beginPath();
-          ctx.moveTo(startX, startY);
-          ctx.quadraticCurveTo((startX+endX)/2 + Math.sin(angle1+i)*15, (startY+endY)/2, endX, endY);
-          ctx.stroke();
-        }
-
-        ctx.fillStyle = '#39ff14';
-        ctx.font = 'bold 15px monospace';
+        ctx.beginPath();
+        ctx.moveTo(4, 45);
+        ctx.lineTo(211, 45);
+        ctx.stroke();
+        ctx.fillStyle = '#ffee00';
+        ctx.shadowColor = '#ff2a85';
+        ctx.shadowBlur = 4;
+        ctx.font = 'bold 15px sans-serif';
         ctx.textAlign = 'center';
-        ctx.fillText('16 ILLUMINATED NIGHT TRAILS ACTIVE - LIGHTS ON UNTIL 9 PM', cvs.width / 2, 30);
+        ctx.textBaseline = 'middle';
+        ctx.fillText(b.text, 107.5, 24);
+        const dataUrl = canvas.toDataURL();
+        img.src = dataUrl;
+        img.removeAttribute('onerror');
+      });
+    });
+  }
+  renderButtons();
+  window.addEventListener('load', renderButtons);
+  document.addEventListener('DOMContentLoaded', renderButtons);
+})();
+</script>
 
-        requestAnimationFrame(render);
-      }
-      render();
-    })();
-  </script>
+<h1>Mt. Spokane Ski &amp; Snowboard Park</h1>
+<p style="text-align:center; color:#00f0ff; font-weight:bold;">Mead, Washington - Night Skiing Capital - 16 Illuminated Runs</p>
+
+<div class="cards-container" style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap; margin:30px 0;">
+  <div class="card" style="max-width:400px; background:#1e293b; border-radius:10px; overflow:hidden; border:2px solid #00f0ff; color:#fff; text-align:center;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Mount_Spokane_lodge_2_base_area.jpg" alt="Mt Spokane Lodge 2 Base Area" style="width:100%; height:240px; object-fit:cover;">
+    <div style="padding:15px;">
+      <h3 style="color:#ff007f; margin-top:0;">Lodge 2 Base &amp; Chair 2</h3>
+      <p style="color:#e2e8f0; font-size:14px;">The hub of Mt. Spokane's night skiing and historic Lodge 2 base operations.</p>
+    </div>
+  </div>
+  <div class="card" style="max-width:400px; background:#1e293b; border-radius:10px; overflow:hidden; border:2px solid #00f0ff; color:#fff; text-align:center;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/Snowboarder_in_halfpipe.jpg" alt="Snowboarder action photo in halfpipe" style="width:100%; height:240px; object-fit:cover;">
+    <div style="padding:15px;">
+      <h3 style="color:#ff007f; margin-top:0;">Night Terrain Park Shredding</h3>
+      <p style="color:#e2e8f0; font-size:14px;">Stomping tricks under stadium floodlights in Mt. Spokane's premier terrain parks.</p>
+    </div>
+  </div>
 </div>
 
-<div style="max-width:900px; margin:30px auto; color:#fff; background:#1e293b; padding:20px; border-radius:10px; border:1px solid #ff007f;">
-  <h2 style="text-align:center; color:#ff007f;">Mt. Spokane Detailed Resort Stats</h2>
-  <table style="width:100%; border-collapse:collapse; text-align:left;">
-    <tbody>
-      <tr style="border-bottom:1px solid #334155;"><th style="padding:10px; color:#00f0ff;">Top Elevation</th><td style="padding:10px;">5,889 ft</td></tr>
-      <tr style="border-bottom:1px solid #334155;"><th style="padding:10px; color:#00f0ff;">Base Elevation</th><td style="padding:10px;">3,889 ft</td></tr>
-      <tr style="border-bottom:1px solid #334155;"><th style="padding:10px; color:#00f0ff;">Vertical Drop</th><td style="padding:10px;">2,000 ft</td></tr>
-      <tr style="border-bottom:1px solid #334155;"><th style="padding:10px; color:#00f0ff;">Skiable Terrain</th><td style="padding:10px;">1,708 acres</td></tr>
-      <tr style="border-bottom:1px solid #334155;"><th style="padding:10px; color:#00f0ff;">Night Skiing</th><td style="padding:10px;">16 Illuminated Night Trails (Wed-Sat)</td></tr>
-      <tr style="border-bottom:1px solid #334155;"><th style="padding:10px; color:#00f0ff;">Number of Trails</th><td style="padding:10px;">52 Designated Runs + Terrain Parks</td></tr>
-      <tr><th style="padding:10px; color:#00f0ff;">Lifts System</th><td style="padding:10px;">6 Lifts (including Chair 6 Peak Express)</td></tr>
-    </tbody>
-  </table>
+<div style="max-width:800px; margin:0 auto; color:#e2e8f0; line-height:1.6;">
+  <h2 style="color:#00f0ff; text-align:center;">About Mt. Spokane</h2>
+  <p>Mt. Spokane Ski &amp; Snowboard Park is a non-profit ski area located inside Mt. Spokane State Park. Just 28 miles northeast of downtown Spokane, it features 1,708 skiable acres, 6 chairlifts, and extensive night skiing until 9 PM Wednesday through Saturday.</p>
 </div>
 
-<div style="text-align:center; margin:30px 0;">
-  <a href="index.html" style="color:#00f0ff; text-decoration:none; font-weight:bold; font-size:18px;">← Return to Base Lodge Main Slopes</a>
+<div style="text-align:center; margin:30px 0; color:#cbd5e1;">
+  <p><a href="index.html" style="color:#00f0ff; font-weight:bold;">&lt;-- Back to Base Lodge</a></p>
 </div>
 
-<footer>Built by Christian Mohlenhoff &middot; BMIS 235</footer>
+<footer>Built by Christian Mohlenhoff - BMIS 235</footer>
 
 </body>
 </html>
