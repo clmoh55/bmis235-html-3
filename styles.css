@@ -175,6 +175,20 @@ tr:nth-child(even) {
 }
 
 @media (max-width: 768px) {
+
+/* CENTER RESORT IMAGES & CARDS */
+.resort-card, .resort-media, .cards-container, .card, figure, .media-card {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
+}
+
+img {
+  display: block !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
   .media-grid, .photo-row, .mountain-photos, .cards-container {
     grid-template-columns: 1fr !important;
   }
