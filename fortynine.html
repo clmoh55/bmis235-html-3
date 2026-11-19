@@ -8,119 +8,92 @@
 <head>
   <meta charset="utf-8">
   <meta name="author" content="Christian Mohlenhoff">
-  <title>49° North Glades - Inland Northwest Winter Slopes</title>
+  <title>49 North Glades - Inland Northwest Winter Slopes</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <nav>
-  <a href="index.html"><img src="img/home.png" alt="Base Lodge" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/e/ea/Freestyle_skiing_jump2.jpg';"></a>
-  <a href="schweitzer.html"><img src="img/schweitzer.png" alt="Schweitzer Bowls" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/e/ea/Freestyle_skiing_jump2.jpg';"></a>
-  <a href="spokane.html"><img src="img/mtspokane.png" alt="Spokane Nights" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/6/69/Snowboarder_in_halfpipe.jpg';"></a>
-  <a href="fortynine.html"><img src="img/49degrees.png" alt="49 North Glades" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/e/ea/Freestyle_skiing_jump2.jpg';"></a>
+  <a href="index.html"><img src="img/home.png" alt="Base Lodge" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/PNW_icon.png/200px-PNW_icon.png';"></a>
+  <a href="schweitzer.html"><img src="img/schweitzer.png" alt="Schweitzer Bowls" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/PNW_icon.png/200px-PNW_icon.png';"></a>
+  <a href="spokane.html"><img src="img/mtspokane.png" alt="Spokane Nights" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/PNW_icon.png/200px-PNW_icon.png';"></a>
+  <a href="fortynine.html"><img src="img/49degrees.png" alt="49 North Glades" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/PNW_icon.png/200px-PNW_icon.png';"></a>
 </nav>
 
-<h1>49° North Mountain Resort</h1>
-<p style="text-align:center; color:#39ff14; font-weight:bold;">Chewelah, Washington &middot; Deep Powder &middot; Chewelah Peak Glades</p>
-
-<div style="max-width:900px; margin:20px auto; text-align:center;">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/e/ea/Freestyle_skiing_jump2.jpg" alt="Freestyle Powder Jump in Tree Glades" style="width:100%; max-height:400px; object-fit:cover; border-radius:10px; border:2px solid #39ff14;" onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/e/ea/Freestyle_skiing_jump2.jpg';">
-</div>
-
-<div style="text-align:center; margin:30px auto; max-width:800px; background:#062016; border:3px solid #39ff14; border-radius:12px; padding:15px; box-shadow:0 0 20px rgba(57,255,20,0.4);">
-  <h2 style="color:#39ff14; margin-top:0;">🔴 TREE-RUN GLADE SHREDDER</h2>
-  <canvas id="gladeCanvas" width="700" height="260" style="background:#022c22; border-radius:8px; width:100%; max-width:700px;"></canvas>
-  <script>
-    (function() {
-      const cvs = document.getElementById('gladeCanvas');
-      if (!cvs) return;
-      const ctx = cvs.getContext('2d');
-      let posX = 350;
-      let time = 0;
-
-      const trees = [];
-      for (let i = 0; i < 25; i++) {
-        trees.push({
-          x: Math.random() * 660 + 20,
-          y: Math.random() * 240,
-          size: Math.random() * 15 + 15
-        });
-      }
-
-      function render() {
-        time += 0.03;
-        ctx.clearRect(0,0,cvs.width,cvs.height);
-
-        ctx.fillStyle = '#064e3b';
-        ctx.fillRect(0,0,cvs.width,cvs.height);
-
-        trees.forEach(t => {
-          t.y += 2;
-          if (t.y > cvs.height + 20) {
-            t.y = -20;
-            t.x = Math.random() * 660 + 20;
-          }
-
-          ctx.fillStyle = '#047857';
-          ctx.beginPath();
-          ctx.moveTo(t.x, t.y - t.size);
-          ctx.lineTo(t.x - t.size/1.5, t.y + t.size/2);
-          ctx.lineTo(t.x + t.size/1.5, t.y + t.size/2);
-          ctx.fill();
-
-          ctx.fillStyle = '#f8fafc';
-          ctx.beginPath();
-          ctx.moveTo(t.x, t.y - t.size);
-          ctx.lineTo(t.x - t.size/3, t.y - t.size/3);
-          ctx.lineTo(t.x + t.size/3, t.y - t.size/3);
-          ctx.fill();
-        });
-
-        posX += Math.sin(time * 2) * 4;
-        if (posX < 50) posX = 50;
-        if (posX > cvs.width - 50) posX = cvs.width - 50;
-
-        ctx.save();
-        ctx.translate(posX, 140);
-        ctx.rotate(Math.cos(time * 2) * 0.3);
-        ctx.fillStyle = '#ff007f';
-        ctx.fillRect(-6, -10, 12, 20);
-        ctx.fillStyle = '#00f0ff';
-        ctx.beginPath(); ctx.arc(0, -14, 6, 0, Math.PI*2); ctx.fill();
-        ctx.restore();
-
-        ctx.fillStyle = '#39ff14';
-        ctx.font = 'bold 14px monospace';
+<script>
+(function generateNavButtons() {
+  function renderButtons() {
+    const deg = String.fromCharCode(176);
+    const buttons = [
+      { selector: 'a[href="index.html"] img', text: 'BASE LODGE' },
+      { selector: 'a[href="schweitzer.html"] img', text: 'SCHWEITZER BOWLS' },
+      { selector: 'a[href="spokane.html"] img', text: 'SPOKANE NIGHTS' },
+      { selector: 'a[href="fortynine.html"] img', text: '49' + deg + ' NORTH GLADES' }
+    ];
+    buttons.forEach(b => {
+      const imgs = document.querySelectorAll(b.selector);
+      imgs.forEach(img => {
+        const canvas = document.createElement('canvas');
+        canvas.width = 215;
+        canvas.height = 50;
+        const ctx = canvas.getContext('2d');
+        const grad = ctx.createLinearGradient(0, 0, 215, 50);
+        grad.addColorStop(0, '#1e1035');
+        grad.addColorStop(0.5, '#2b0c36');
+        grad.addColorStop(1, '#0f2027');
+        ctx.fillStyle = grad;
+        ctx.fillRect(0, 0, 215, 50);
+        ctx.strokeStyle = '#00f5d4';
+        ctx.lineWidth = 3;
+        ctx.strokeRect(2, 2, 211, 46);
+        ctx.strokeStyle = '#ff2a85';
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(4, 45);
+        ctx.lineTo(211, 45);
+        ctx.stroke();
+        ctx.fillStyle = '#ffee00';
+        ctx.shadowColor = '#ff2a85';
+        ctx.shadowBlur = 4;
+        ctx.font = 'bold 15px sans-serif';
         ctx.textAlign = 'center';
-        ctx.fillText('CHEWELAH PEAK DEEP POWDER GLADE CARVER - ACTIVE', cvs.width / 2, 25);
+        ctx.textBaseline = 'middle';
+        ctx.fillText(b.text, 107.5, 24);
+        const dataUrl = canvas.toDataURL();
+        img.src = dataUrl;
+        img.removeAttribute('onerror');
+      });
+    });
+  }
+  renderButtons();
+  window.addEventListener('load', renderButtons);
+  document.addEventListener('DOMContentLoaded', renderButtons);
+})();
+</script>
 
-        requestAnimationFrame(render);
-      }
-      render();
-    })();
-  </script>
+<h1>49 Degrees North Mountain Resort</h1>
+<p style="text-align:center; color:#00f0ff; font-weight:bold;">Chewelah, Washington - Deep Powder Glades - Chewelah Peak Glades</p>
+
+<div class="cards-container" style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap; margin:30px 0;">
+  <div class="card" style="max-width:550px; background:#1e293b; border-radius:10px; overflow:hidden; border:2px solid #00f0ff; color:#fff; text-align:center;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/International_Selkirk_Loop_-_Skiing_at_49_Degrees_North_-_NARA_-_7719616.jpg" alt="Skiing at 49 Degrees North" style="width:100%; height:320px; object-fit:cover;">
+    <div style="padding:15px;">
+      <h3 style="color:#ff007f; margin-top:0;">International Selkirk Loop Skiing at 49 Degrees North</h3>
+      <p style="color:#e2e8f0; font-size:14px;">Carving through legendary tree glades and wide open powder bowls at 49 Degrees North.</p>
+    </div>
+  </div>
 </div>
 
-<div style="max-width:900px; margin:30px auto; color:#fff; background:#1e293b; padding:20px; border-radius:10px; border:1px solid #39ff14;">
-  <h2 style="text-align:center; color:#39ff14;">49° North Detailed Resort Stats</h2>
-  <table style="width:100%; border-collapse:collapse; text-align:left;">
-    <tbody>
-      <tr style="border-bottom:1px solid #334155;"><th style="padding:10px; color:#00f0ff;">Top Elevation</th><td style="padding:10px;">5,773 ft</td></tr>
-      <tr style="border-bottom:1px solid #334155;"><th style="padding:10px; color:#00f0ff;">Base Elevation</th><td style="padding:10px;">3,923 ft</td></tr>
-      <tr style="border-bottom:1px solid #334155;"><th style="padding:10px; color:#00f0ff;">Vertical Drop</th><td style="padding:10px;">1,850 ft</td></tr>
-      <tr style="border-bottom:1px solid #334155;"><th style="padding:10px; color:#00f0ff;">Skiable Terrain</th><td style="padding:10px;">2,325 acres</td></tr>
-      <tr style="border-bottom:1px solid #334155;"><th style="padding:10px; color:#00f0ff;">Tree Skiing</th><td style="padding:10px;">Extensive East &amp; West Basin Tree Glades</td></tr>
-      <tr style="border-bottom:1px solid #334155;"><th style="padding:10px; color:#00f0ff;">Number of Trails</th><td style="padding:10px;">90 Designated Runs</td></tr>
-      <tr><th style="padding:10px; color:#00f0ff;">Lifts System</th><td style="padding:10px;">7 Lifts (including Northern Sunrise High-Speed Quad)</td></tr>
-    </tbody>
-  </table>
+<div style="max-width:800px; margin:0 auto; color:#e2e8f0; line-height:1.6;">
+  <h2 style="color:#00f0ff; text-align:center;">About 49 Degrees North</h2>
+  <p>49 Degrees North Mountain Resort is located near Chewelah, Washington, in the Colville National Forest. Spanning 2,325 skiable acres across Chewelah Peak and Angel Peak, it offers 1,850 feet of vertical drop and 7 chairlifts, famous for deep tree glades and uncrowded alpine powder.</p>
 </div>
 
-<div style="text-align:center; margin:30px 0;">
-  <a href="index.html" style="color:#00f0ff; text-decoration:none; font-weight:bold; font-size:18px;">← Return to Base Lodge Main Slopes</a>
+<div style="text-align:center; margin:30px 0; color:#cbd5e1;">
+  <p><a href="index.html" style="color:#00f0ff; font-weight:bold;">&lt;-- Back to Base Lodge</a></p>
 </div>
 
-<footer>Built by Christian Mohlenhoff &middot; BMIS 235</footer>
+<footer>Built by Christian Mohlenhoff - BMIS 235</footer>
 
 </body>
 </html>
